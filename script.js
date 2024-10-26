@@ -1,20 +1,20 @@
-const hamburger = document.querySelector('.hamburger-menu');
-const hamburgerIcon = document.querySelector('.hamburger-icon');
-const menuContainer = document.querySelector('.hamburger-container');
+//const hamburger = document.querySelector('.hamburger-menu');
+//const hamburgerIcon = document.querySelector('.hamburger-icon');
+//const menuContainer = document.querySelector('.hamburger-container');
 
 // Hamburger menu toggle logic
-let menuOpen = false;
-hamburger.addEventListener('click', () => {
-  if (!menuOpen) {
-    hamburgerIcon.classList.add('clicked');
-    menuContainer.classList.add('show');
-    menuOpen = true;
-  } else {
-    hamburgerIcon.classList.remove('clicked');
-    menuContainer.classList.remove('show');
-    menuOpen = false;
-  }
-});
+//let menuOpen = false;
+//hamburger.addEventListener('click', () => {
+  //if (!menuOpen) {
+   // hamburgerIcon.classList.add('clicked');
+  //  menuContainer.classList.add('show');
+   // menuOpen = true;
+  //} else {
+   // hamburgerIcon.classList.remove('clicked');
+   // menuContainer.classList.remove('show');
+   // menuOpen = false;
+  //}
+//});
 
 // Catch items animation using IntersectionObserver with staggered effect
 const catchContainer = document.querySelector('.hero-catch-container');
