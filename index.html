@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom website and marketing solutions for small businesses in the Washington DC and DMV area - Reach&Rise">
   <title>Reach&Rise</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,15 +104,18 @@
       <div class=" quote-title">GET IN TOUCH</div>
       <p class="info-quote-text">Do you have a fully developed idea? Need a consultation? </p>
       <p class="info-quote-text">Get closer to new customers walking in your door by submitting the form below.</p>
-      <form class="quote-form">
-        <input type="text" class="quote-item name" id="Name" placeholder="Name">
-        <input type="text" class="quote-item business" id="Business" placeholder="Business Name">
-        <input type="text" class="quote-item phone" id="Phone" placeholder="Phone Number">
-        <input type="text" class="quote-item socials" id="Socials" placeholder="Social Media Link">
-        <input type="text" class="quote-item current-site" id="CurrentSite" placeholder="Current Website Link (if applicable)">
-        <textarea type="textarea" class="quote-item inquiry" id="Inquiry" placeholder="Please describe your needs here"></textarea>
+      <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="121c383f-0684-48e6-b6a8-46a88bc74195">
+        <input type="text" name="name" class="quote-item name" id="Name" placeholder="Name*" required>
+        <input type="text" name="business-name" class="quote-item business" id="Business" placeholder="Business Name">
+        <input type="email" name="email" class="quote-item email" id="email" placeholder="Email*" required>
+        <input type="text" name="socials" class="quote-item socials" id="Socials" placeholder="Social Media Link">
+        <input type="text" name="current-site" class="quote-item current-site" id="CurrentSite" placeholder="Current Website Link (if applicable)">
+        <textarea type="textarea" name = "inquiry" class="quote-item inquiry" id="Inquiry" placeholder="Please describe your needs here*" required></textarea>
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button class="submit" type="submit">SUBMIT</button>
       </form>
-      <button class="submit">SUBMIT</button>
+      
     </div>
   </section>
 

@@ -37,8 +37,8 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
   const cube = document.querySelector('.cube');
   let isDragging = false;
-  let startX = 0, startY = 0;
-  let currentX = 0, currentY = 0;
+  let startX = 30, startY = 40;
+  let currentX = 30, currentY = 40;
   let velocityX = 0, velocityY = 0;
   let lastMoveTime = 0;
   let spinAnimation;
