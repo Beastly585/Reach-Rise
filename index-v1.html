@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Web Design | Web Design</title> 
+  <link rel="stylesheet" href="style-crazy.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <script type="module" crossorigin src="./assets/index-BoM6BaHl.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DScf3t_9.css">
 </head>
 
 <body class = "careful">
     <div class="hamburger-container">
       <a href="./contact.html" class="special-link hamburger-link">contact</a>
       <a href="#about" class="hamburger-link">home</a>
-      <a href="#pricing" class="hamburger-link">bundles</a>
+      <a href="./pricing.html" class="hamburger-link">bundles</a>
     </div>
     <div class="hamburger-icon"></div>
 
@@ -62,6 +61,7 @@
         <nav class="about">about</nav>
         <!-- <nav class="sample">some work</nav> -->
         <nav class="contact-nav"><strong><a href="./contact.html">contact</a></strong></nav>
+        <nav class="contact-large"><strong><a href="#contact">contact</a></strong></nav>
       </div>
     </section>
   
@@ -296,8 +296,9 @@
   </section> -->
 
 
-<div class="contact">
+<div class="contact" id="contact">
   <div class="special-row">
+
     <div class="how-it-works">
       <h2 class="hiw-title">how it works</h2>
       <div class="hiw-container">
@@ -333,6 +334,14 @@
           </div>
           <div class="hiw-description">Typically, you can expect an answer within 24 hours. I take some time to review your request</div>
         </div>
+      </div>
+    </div>
+
+
+    <div class="services-summary-container">
+      <div class="summary-expander">
+        <div class="expand-intro">Services Summary</div>
+        <button class="expand-arrow"><i class="fa-solid fa-chevron-down"></i></button>
       </div>
     </div>
   
@@ -372,5 +381,6 @@
   </footer>
 
 
+  <script src="script-pretty.js" type="module"></script>
 </body>
 </html>

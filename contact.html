@@ -4,78 +4,535 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Web Design | Web Design</title> 
-  <link rel="stylesheet" href="style-crazy.css">
+  <link rel="stylesheet" href="contact-style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
-<body class="">
+<body class="careful-contact">
     <div class="hamburger-container">
       <a href="./contact.html" class="special-link hamburger-link">contact</a>
       <a href="./index.html" class="hamburger-link">home</a>
-      <a href="#pricing" class="hamburger-link">bundles</a>
+      <a href="./pricing.hmtl" class="hamburger-link">bundles</a>
     </div>
     <div class="hamburger-icon"></div>
 
 
 <div class="contact-page">
+
   <div class="special-row">
+
+    <div class="services-summary-container">
+      
+      <div class="summary-expander">
+        <h3 class="expand-intro">REVIEW SERVICES</h3>
+        <button class="expand-arrow"><i class="fa-solid fa-chevron-down"></i></button>
+      </div>
+
+      <div class="summary-intro">Before filling out a contact form, take a second to review a summary of my services by expanding this box!</div>
+
+      <div class="service-summ-container">
+        <div class="service-summ-item" style="background-color: rgb(162,15,15);">
+          <h3 class="service-summ-title">new build</h3>
+          <div class="service-summ-desc">you need something built (or rebuilt) from scratch</div>
+          <ul class="service-summ-list">
+            <li>new website (or upgrades that will require generative work)</li>
+            <li>brandkits - logos, profile icons, banners, posters</li>
+            <li>campaign media - media for specific product/service launches</li>
+          </ul>
+        </div>
+        <div class="service-summ-item" style="background-color: orangered;">
+          <h3 class="service-summ-title">upgrade</h3>
+          <div class="service-summ-desc">you have a product with some issues you'd like fixed</div>
+          <ul class="service-summ-list">
+            <li>website upgrades - adding a new page, adding SEO, or other upgrads</li>
+            <li>brandkits upgrades - minor tweaks to existing logos/banners</li>
+          </ul>
+        </div>
+        <div class="service-summ-item" style="background-color: rgb(255, 187, 0);">
+          <h3 class="service-summ-title">tweaks</h3>
+          <div class="service-summ-desc">anything that isn't listed above and is creative/related to web dev. 'tweaks' implies the request will take less than an hour </div>
+          <ul class="service-summ-list"> Examples
+            <li>"I need to update my 'Meet the Team' because I hired 2 new employees"</li>
+            <li>"can you change my website color-scheme?"</li>
+            <li>"I made this flyer, but something's off about it"</li>
+          </ul>
+        </div>
+  
+        <div class="service-summ-item" style="background-color: #29AB87;">
+          <h3 class="service-summ-title">consultation</h3>
+          <div class="service-summ-desc">for those who want experienced input for their project</div>
+          <ul class="service-summ-list">
+            <li>website design - layouts, color-schemes</li>
+            <li>website performance - SEO, UX, UI, performance analysis ("how can I make my site faster?"), Google Analytics deep-dives</li>
+            <li>campaigns - brand/product/service launch strategy</li>
+          </ul>
+        </div>
+      </div>
+      
+      
+    </div>
     <div class="how-it-works">
       <h2 class="hiw-title">how it works</h2>
-      <div class="hiw-container">
+      <p class="ss-desc">What kind of service are you interested in?</p>
+      <div class="service-select-container">
+        <div class="ss ss-new">new</div>
+        <div class="ss ss-upgrade">upgrade</div>
+        <div class="ss ss-tweaks">tweaks</div>
+        <div class="ss ss-consultation">consultation</div>
+        <button class="ss-exit">X</button>
+      </div>
+
+      <div class="avg-timeline-container">
+        <div class="avg-timeline avg-new">average timeline 8-24 weeks</div>
+        <div class="avg-timeline avg-upgrade">average timeline 4-16 weeks</div>
+        <div class="avg-timeline avg-tweak">average timeline 1 week</div>
+        <div class="avg-timeline avg-consult">average timeline &#x3c;1 week</div>
+      </div>
+
+      
+
+
+
+      <div class=" hiw-container hiw-container-new">
         <div class="hiw-item">
           <div class="hiw-header">
             <div class="hiw-number">1</div>
-            <div class="hiw-step-title">write out your goals</div>
+            <div class="hiw-step-title">you have an idea</div>
           </div>
           
-          <div class="hiw-description">before buying anything, it's a good idea to really understand what your goals are. <br> write them out so you have a clear understanding of what you want</div>
+          <div class="hiw-description">you've though it through and you decided it's time for a new website, brandkit, or campaign to get customers informed</div>
+          <div class="hiw-description"></div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">24hours</div>
         </div>
   
         <div class="hiw-item">
           <div class="hiw-header">
             <div class="hiw-number">2</div>
-            <div class="hiw-step-title">try out the <a href="link">simulator</a></div>
+            <div class="hiw-step-title">submit a contact request</a></div>
           </div>
-          <div class="hiw-description">You don't need to do this step, but it's always helpful to have an idea what a client is thinking<br><br>Check out the simulator to play around with some colors</div>
+          <div class="hiw-description">with an idea in mind, you fill out a form below with as much information as you can (so i have a good idea of your vision)</div>
+          <div class="hiw-description">if you want a website, check out <a href="">this site</a> for templates or inspiration</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">24hours</div>
         </div>
   
         <div class="hiw-item">
           <div class="hiw-header">
             <div class="hiw-number">3</div>
-            <div class="hiw-step-title">fill out a contact form</div>
+            <div class="hiw-step-title">i'll reach out</div>
           </div>
-          <div class="hiw-description"></div>
+          <div class="hiw-description">i'll email or call you to confirm receipt of your request and to ask any questions I may need to supply you with a quote</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">72hours</div>
         </div>
   
         <div class="hiw-item">
           <div class="hiw-header">
             <div class="hiw-number">4</div>
-            <div class="hiw-step-title">i'll be in touch</div>
+            <div class="hiw-step-title">quote & sample</div>
           </div>
-          <div class="hiw-description">Typically, you can expect an answer within 24 hours. I take some time to review your request</div>
+          <div class="hiw-description">after confirming your request, it'll take me 1-3 days to put together a sample and a quote</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
+
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">5</div>
+            <div class="hiw-step-title">schedule a meeting (optional)</div>
+          </div>
+          <div class="hiw-description">with the quote, i'll provide you a meeting time during which we can discuss your likes/dislikes, guidance, and answer any questions</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">as soon as deposit is paid</div>
+        </div>
+
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">6</div>
+            <div class="hiw-step-title">i'll get to work</div>
+          </div>
+          <div class="hiw-description">most websites will take between 2-4 weeks to complete</div>
+          <div class="hiw-description">as a part of purchasing a website, I will check-in with you weekly on progress so you can review and tweak as we go</div>
         </div>
       </div>
-    </div>
+
+    
+      <div class=" hiw-container hiw-container-consult">
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">1</div>
+            <div class="hiw-step-title">you want some expert insight</div>
+          </div>
+          
+          <div class="hiw-description">you're working on or starting a project for which you want some insight from an experienced professional</div>
+          <div class="hiw-description">it can be anything from branding to resource selection; if your project is along the lines of my offered services, I can likely help you.</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
   
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">2</div>
+            <div class="hiw-step-title">submit a contact request</a></div>
+          </div>
+          <div class="hiw-description">submit a form with as much information on your issue as possible</div>
+          <div class="hiw-description">i'll use your submitted information to determine if I can effectively offer you value through a consultation</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">24hours</div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">3</div>
+            <div class="hiw-step-title">i'll reach out</div>
+          </div>
+          <div class="hiw-description">i'll email or call you to confirm receipt of your request and to confirm whether or not i can provide assistance</div>
+          <div class="hiw-description">if your request is within my scope of work, i'll also send you a quote for the consultation</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">as soon as quote is paid</div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">4</div>
+            <div class="hiw-step-title">scheduling and material submittal</div>
+          </div>
+          <div class="hiw-description">once the quote is paid, i'll provide you with an extensive list of available times to meet, usually virtually/in-person, and request any materials or data for me to review before we meet</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
+
+      
+
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">6</div>
+            <div class="hiw-step-title">meet</div>
+          </div>
+          <div class="hiw-description">once the meeting is scheduled, we'll meet for the allotted time</div>
+          <div class="hiw-description">my consultations do come with some wiggle room on meeting multiple times under a single purchase. each request differs, but i will communicate deliverables included in the purchase very explicitly</div>
+        </div>
+          
+      </div>
+
+      <div class=" hiw-container hiw-container-tweaks">
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">1</div>
+            <div class="hiw-step-title">you want some expert insight</div>
+          </div>
+          
+          <div class="hiw-description">you're working on or starting a project for which you want some insight from an experienced professional</div>
+          <div class="hiw-description">it can be anything from branding to resource selection; if your project is along the lines of my offered services, I can likely help you.</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">2</div>
+            <div class="hiw-step-title">submit a contact request</a></div>
+          </div>
+          <div class="hiw-description">submit a form with as much information on your issue as possible</div>
+          <div class="hiw-description">i'll use your submitted information to determine if I can effectively offer you value through a consultation</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">24hours</div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">3</div>
+            <div class="hiw-step-title">i'll reach out</div>
+          </div>
+          <div class="hiw-description">i'll email or call you to confirm receipt of your request and to confirm whether or not i can provide assistance</div>
+          <div class="hiw-description">if your request is within my scope of work, i'll also send you a quote for the consultation</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">as soon as quote is paid</div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">4</div>
+            <div class="hiw-step-title">scheduling and material submittal</div>
+          </div>
+          <div class="hiw-description">once the quote is paid, i'll provide you with an extensive list of available times to meet, usually virtually/in-person, and request any materials or data for me to review before we meet</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
+
+      
+
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">6</div>
+            <div class="hiw-step-title">meet</div>
+          </div>
+          <div class="hiw-description">once the meeting is scheduled, we'll meet for the allotted time</div>
+          <div class="hiw-description">my consultations do come with some wiggle room on meeting multiple times under a single purchase. each request differs, but i will communicate deliverables included in the purchase very explicitly</div>
+        </div>
+          
+      </div>
+
+      <div class=" hiw-container hiw-container-upgrade">
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">1</div>
+            <div class="hiw-step-title">you have an idea</div>
+          </div>
+          
+          <div class="hiw-description">you've though it through and you decided it's time to upgrade your online presence</div>
+          <div class="hiw-description">whether that be your website, your social media, or your logo</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">2</div>
+            <div class="hiw-step-title">submit a contact request</a></div>
+          </div>
+          <div class="hiw-description">with an idea in mind, you fill out a form below with as much information as you can (so i have a good idea of your vision)</div>
+          <div class="hiw-description">if you want a website upgrade, check out <a href="">this site</a> for templates or inspiration</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">24hours</div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">3</div>
+            <div class="hiw-step-title">i'll reach out</div>
+          </div>
+          <div class="hiw-description">i'll email or call you to confirm receipt of your request and to ask any questions I may need to supply you with a quote</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">48hours</div>
+        </div>
+  
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">4</div>
+            <div class="hiw-step-title">quote & sample</div>
+          </div>
+          <div class="hiw-description">after confirming your request, it'll take me 1-3 days to put together a quote and a sample (if applicable)</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp"></div>
+        </div>
+
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">5</div>
+            <div class="hiw-step-title">schedule a meeting (optional)</div>
+          </div>
+          <div class="hiw-description">with the quote and sample, i'll provide you a meeting time during which we can discuss your likes/dislikes, guidance, and answer any questions</div>
+        </div>
+
+        <div class="hiw-timestamp">
+          <img src="" class="hiw-time-img">
+          <div class="timestamp">as soon as deposit is paid</div>
+        </div>
+
+        <div class="hiw-item">
+          <div class="hiw-header">
+            <div class="hiw-number">6</div>
+            <div class="hiw-step-title">i'll get to work</div>
+          </div>
+          <div class="hiw-description">most websites will take between 2-4 weeks to complete</div>
+          <div class="hiw-description">as a part of purchasing a website, I will check-in with you weekly on progress so you can review and tweak as we go</div>
+        </div>
+          
+      </div>
+
+
+    </div>
   
   
   
     <section class="get-a-quote" id="contact">
       <div class="dollar-quote-container">
         <h1 class=" quote-title">CONTACT</h1>
-        <p class="info-quote-text">Do you have a fully developed idea? Need a consultation? </p>
         <p class="info-quote-text">Get closer to new customers, fill in a form and get in touch!</p>
+        <p class="info-quote-text">Please take some time to populate as much info as possible to expedite my response</p>
         <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="121c383f-0684-48e6-b6a8-46a88bc74195">
-          <input type="text" name="name" class="quote-item name" id="Name" placeholder="Name*" required>
-          <input type="text" name="business-name" class="quote-item business" id="Business" placeholder="Business Name">
-          <input type="email" name="email" class="quote-item email" id="email" placeholder="Email*" required>
-          <input type="text" name="socials" class="quote-item socials" id="Socials" placeholder="Social Media Link">
-          <input type="text" name="current-site" class="quote-item current-site" id="CurrentSite" placeholder="Current Website Link (if applicable)">
-          <textarea type="textarea" name = "inquiry" class="quote-item inquiry" id="Inquiry" placeholder="Please describe your needs here*" required></textarea>
+          <h3 class="contact-subtitle"> PERSONAL INFORMATION </h3>
+          <label for="name">your name*</label>
+          <input type="text" name="name" class="quote-item name" id="name" placeholder="Your name" required>
+
+          <label for="email">your email*</label>
+          <input type="text" name="email" class="quote-item name" id="email" placeholder="Your email" required>
+
+          <h3 class="contact-subtitle">BUSINESS INFORMATION</h3>
+
+          <label for="company-name">company name*</label>
+          <input type="text" name="company-name" class="quote-item business" id="company-name" placeholder="company Name" required>
+
+          <label for="company-phone">company phone*</label>
+          <input type="text" name="company-phone" class="quote-item phone" id="company-phone" placeholder="company phone number">
+
+          <label for="business-address">company address</label>
+          <div class="address-inputs">
+            <input type="text" name="business-address" class="quote-item address" id="business-address" placeholder="Address">
+            <input type="text" name="business-city" class="quote-item city" id="business-city" placeholder="city">
+            <input type="text" name="business-zip" class="quote-item zip" id="business-zip" placeholder="ZIP / postal">
+            <input type="text" name="business-state" class="quote-item state" id="business-state" placeholder="state/region">
+          </div>
+
+          <label for="company-description">briefly describe your company*</label>
+          <input type="text" name="company-description" class="company-description" id="company-description" placeholder="Company description">
+
+          
+          <label for="company-services">what services do you offer?*</label>
+          <input type="text" name="company-services" class="quote-item company-services" id="company-services" placeholder="list main services your company offers">
+
+          <label for="business-address">how can i get you closer to your goals?*</label>
+          <input type="text" name="business-address" class="quote-item address" id="client-goals" placeholder="What do you hope to result from working with me?">
+
+          <label for="current-webstie">current website URL (if you have one)</label>
+          <input type="website" name="website" class="quote-item website" id="current-website" placeholder="Current website URL">
+
+          <h3 class="contact-subtitle">SERVICE SELECTION</h3>
+          <label for="service-select">Select Service:</label>
+
+
+          <select id="service-select" name="service" style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box;">
+            <option value="optional">--Choose a service--</option>
+            <option value="new">New Website</option>
+            <option value="upgrade">Upgrade Current Website</option>
+            <option value="tweak">Tweaks</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="consultation">Consultation</option>
+            <option value="brand">Brandkits - Logos, Flyers, Icons, etc.</option>
+            <option value="other">Other</option>
+          </select>
+
+
+          <div class="input-group" id="new">
+            <label for="new-site-name">new website name</label>
+            <input type="text" name="new-website-name" id="new-site-name" placeholder="new Website Name">
+
+            <label for="special-features">will your site needs specific features?</label>
+            <input type="text" name="special-features" id="special-features" placeholder="ex. - booking calendar, online marketplace">
+
+            <label for="template">do you have a template you like?</label>
+            <input type="text" name="template" id="template" placeholder="URL to template">
+
+            <label for="url-pref">what URL will your site have?</label>
+            <input type="text" name="url-pref" id="url-pref" placeholder="desired URL">
+          </div>
+          
+          <div class="input-group" id="upgrade">
+            <label for="desired-upgrades">desired site changes</label>
+            <textarea type="text" name="desired-upgrades" id="desired-upgrades" placeholder="describe the changes you want made to your current site"></textarea>
+
+            <label for="template">do you have a template you like?</label>
+            <input type="text" name="template" id="template" placeholder="URL to template">
+          </div>
+          
+          <div class="input-group" id="tweak">
+            <div class="tweak-notice" style="opacity: 0.7; margin-bottom: 20px;">NOTE: this option is for very minor changes</div>
+            <label for="tweak-what">what will I be tweaking?</label>
+            <input name="tweak-what" id="tweak-what" placeholder="tweaking your website? Your logo? Flyers?">
+
+            <label for="tweak-details">desired tweaks</label>
+            <textarea name="tweak-details" id="tweak-details" placeholder="what changes do you need made?"></textarea>
+          </div>
+
+          <div class="input-group" id="consultation">
+
+            <label for="select-consult">Select a consultation:</label>
+            <select name="select-consult" id="select-consult" style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box; margin-bottom: 20px;">
+              <option value="optional">--Choose a consultation--</option>
+              <optgroup label="DESIGN" style="color: rgba(0,0,0,0.9)">
+                <option value="design">New Website</option>
+                <option value="design">UX/UI</option>
+                <option value="design">Brandkits - logos, company media</option>
+              </optgroup>
+              <optgroup label="CLIENT REACH">
+                <option value="client">SEO Analysis</option>
+                <option value="client">Google Analytics Review</option>
+                <option value="client">Marketing Strategy</option>
+              </optgroup>
+            </select>
+
+            <textarea name="consultation-details" placeholder="please provide details about your issue and how i can help."></textarea>
+          </div>
+
+          <div class="input-group" id="brand">
+
+            <label for="select-brandkit">What media types are you looking for?</label>
+            <select name="select-brandkit[]" id="select-brandkit" multiple size="5" class="brandkit-multiple" style="margin-top: 2px;">
+              <option value="logo">Logo</option>
+              <option value="profile-image">Profile Picture</option>
+              <option value="flyer">Flyer</option>
+              <option value="campaign">New Campaign - flyers, billboards, etc.</option>
+            </select>
+            
+            <label for="select-brand-details">Please share some details of what you're looking for:</label>
+            <textarea name="select-brand-detail" id="select-brand-details" placeholder="Do you have a vision already? Any details you'd like to share? (i.e. favorite colors, other logos you like)"></textarea>
+          </div>
+
+
+          <div class="input-group" id="other">
+            
+            <label for="other-details">Your request type isn't listed?</label>
+            <textarea name="other-details" id="other-details" placeholder="Please provide as much info about your inquiry as possible here."></textarea>
+          </div>
+        
+
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <button class="submit" type="submit">SUBMIT</button>
         </form>
@@ -93,5 +550,5 @@
     </p>
   </footer>
 </body>
-<script src="script-pretty.js" type="module"></script>
+<script src="contact-script.js" type="module"></script>
 </html>
