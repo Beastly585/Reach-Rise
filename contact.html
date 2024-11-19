@@ -58,8 +58,8 @@
           <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="121c383f-0684-48e6-b6a8-46a88bc74195">
 
-            <div class="general-info-container">
-              <h3 class="contact-subtitle"> General Info </h3>
+            <div class="general-info-container contact-subsection">
+              <h3 class="contact-subtitle">GENERAL</h3>
               <label for="name">your name<span class="orange">*</span></label>
               <input type="text" name="name" class="quote-item name" id="name" placeholder="Your name" required>
     
@@ -77,13 +77,13 @@
             </div>
 
 
-            <div class="company-info-container" id="company-info">
-              <h3 class="contact-subtitle">Company Info</h3>
+            <div class="company-info-container contact-subsection" id="company-info">
+              <h3 class="contact-subtitle">COMPANY</h3>
   
-              <label for="company-name">company name*</label>
+              <label for="company-name">company name<span class="orange">*</span></label>
               <input type="text" name="company-name" class="quote-item business" id="company-name" placeholder="company Name" required>
     
-              <label for="company-phone">company phone*</label>
+              <label for="company-phone">company phone</label>
               <input type="text" name="company-phone" class="quote-item phone" id="company-phone" placeholder="company phone number">
     
               <label for="business-address">company address</label>
@@ -94,17 +94,17 @@
                 <input type="text" name="business-state" class="quote-item state" id="business-state" placeholder="state/region">
               </div>
     
-              <label for="company-description">briefly describe your company*</label>
-              <input type="text" name="company-description" class="company-description" id="company-description" placeholder="Company description">
+              <label for="company-description">briefly describe your company<span class="orange">*</span></label>
+              <input type="text" name="company-description" class="company-description" id="company-description" placeholder="Company description" required>
     
               
-              <label for="company-services">what services do you offer?*</label>
-              <input type="text" name="company-services" class="quote-item company-services" id="company-services" placeholder="list main services your company offers">
+              <label for="company-services">what services do you offer?<span class="orange">*</span></label>
+              <input type="text" name="company-services" class="quote-item company-services" id="company-services" placeholder="list main services your company offers" required>
     
-              <label for="business-address">how can i get you closer to your goals?*</label>
+              <label for="business-address">how can i get you closer to your goals?</label>
               <input type="text" name="business-address" class="quote-item address" id="client-goals" placeholder="What do you hope to result from working with me?">
     
-              <label for="current-webstie">current website URL (if you have one)</label>
+              <label for="current-website">current website URL (if you have one)</label>
               <input type="website" name="website" class="quote-item website" id="current-website" placeholder="Current website URL">
               
             </div>
@@ -115,9 +115,10 @@
               <button class="form-check project-qn form-no">no</button>
             </div>
             
-            <div class="project-info-container" id="project-info">
-              <h3 class="contact-subtitle">Project Info</h3>
-              <label for="service-select">Select Service:</label>
+            <div class="project-info-container contact-subsection" id="project-info">
+              <h3 class="contact-subtitle">PROJECT</h3>
+              <div class="project-intro">Select a project-type from the dropdown below:</div>
+              <!-- <label for="service-select">Select Service:</label> -->
     
     
               <select id="service-select" name="service" style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box;">
@@ -186,9 +187,9 @@
               <div class="input-group" id="brand">
     
                 <label for="select-brandkit">What media types are you looking for?</label>
-                <select name="select-brandkit[]" id="select-brandkit" multiple size="5" class="brandkit-multiple" style="margin-top: 2px;">
-                  <option value="logo">Logo</option>
-                  <option value="profile-image">Profile Picture</option>
+                <select name="select-brandkit" id="select-brandkit"  size="5" class="brandkit-multiple" style="margin-top: 2px;">
+                  <option value="logo">Brandkit - Logo package</option>
+                  <option value="profile-image">Social Media - Profile pic, banners</option>
                   <option value="flyer">Flyer</option>
                   <option value="campaign">New Campaign - flyers, billboards, etc.</option>
                 </select>

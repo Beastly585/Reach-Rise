@@ -35,22 +35,20 @@ const projectChoice = document.querySelector("#project-info-choice");
 const lazyQ = document.querySelector('#general-q');
 
 yesCompanyButton.addEventListener('click', () => {
-  companySection.style.display = 'block';
+  companySection.style.display = 'flex';
   companySection.scrollIntoView();
+  projectChoice.style.display = 'flex';
 }
 )
 
 noCompanyButton.addEventListener('click', () => {
-  console.log('click no')
   companySection.style.display = 'none';
-
   projectChoice.style.display = 'flex';
-  
   projectChoice.scrollIntoView();
 });
 
 yesProjectButton.addEventListener('click', () => {
-  projectSection.style.display = 'block';
+  projectSection.style.display = 'flex';
   projectSection.scrollIntoView();
 })
 
@@ -134,36 +132,46 @@ noProjectButton.addEventListener('click', () => {
 // })
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const selectElement = document.getElementById("service-select");
-//   const inputGroups = document.querySelectorAll(".input-group");
+document.addEventListener("DOMContentLoaded", () => {
+  const selectElement = document.getElementById("service-select");
+  
+  // Check if selectElement exists before proceeding
+  if (!selectElement) {
+    console.error('The service-select element was not found.');
+    return; // Exit early if the element doesn't exist
+  }
 
-//   // Hide all input groups
-//   const hideAllGroups = () => {
-//     inputGroups.forEach(group => {
-//       group.style.display = "none";
-//     });
-//   };
+  const inputGroups = document.querySelectorAll(".input-group");
 
-//   // Show the selected group
-//   const showGroup = (value) => {
-//     const selectedGroup = document.getElementById(value);
-//     if (selectedGroup) {
-//       selectedGroup.style.display = "block";
-//     }
-//   };
+  // Hide all input groups
+  const hideAllGroups = () => {
+    inputGroups.forEach(group => {
+      group.style.display = "none";
+    });
+  };
 
-//   // Handle selection change
-//   selectElement.addEventListener("change", (event) => {
-//     const selectedValue = event.target.value;
+  // Show the selected group
+  const showGroup = (value) => {
+    const selectedGroup = document.getElementById(value);
+    if (selectedGroup) {
+      selectedGroup.style.display = "block";
+    }
+  };  
 
-//     hideAllGroups(); // Hide all groups first
-//     if (selectedValue !== "optional") {
-//       showGroup(selectedValue); // Show the relevant group
-//     } else {
-//       showGroup("default"); // Show the default group if nothing is selected
-//     }
-//   });
+  // Handle selection change
+  selectElement.addEventListener("change", (event) => {
+    const selectedValue = event.target.value;
+
+    hideAllGroups(); // Hide all groups first
+    if (selectedValue !== "optional") {
+      showGroup(selectedValue); // Show the relevant group
+    } else {
+      showGroup("default"); // Show the default group if nothing is selected
+    }
+  });
+
+}); // <-- Missing closing parenthesis here
+
 
 //   // Initialize the form by hiding all input groups and showing the default one
 //   hideAllGroups();
