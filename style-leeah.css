@@ -678,3 +678,47 @@ iframe::-webkit-scrollbar-thumb {
   }
 }
 
+
+
+footer {
+  width: 100%;
+  background-image: linear-gradient(black, #ff00ff);
+  font-weight: 700;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+footer .footer-text {
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  font-style: italic;
+}
+
+.footer-socials {
+  color: white;
+}
+
+.socials-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.socials-icons a {
+  height: 50px;
+  width: 50px;
+}
+
+.socias-icons img {
+  width: 50px;
+  object-fit: contain;
+}
