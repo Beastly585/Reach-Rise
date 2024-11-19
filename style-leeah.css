@@ -451,7 +451,7 @@ iframe::-webkit-scrollbar-thumb {
 }
 
 .website-snippet:hover .iframe-overlay {
-  opacity: 1; /* Make the overlay visible on hover */
+  opacity: 1; 
 }
 
 .activate-iframe {
@@ -617,7 +617,7 @@ iframe::-webkit-scrollbar-thumb {
 }
 
 
-/* ------------CONTACT------------------ */
+/* ------------CONTACT-FOOTER------------------ */
 
 .contact-container {
   width: 90%;

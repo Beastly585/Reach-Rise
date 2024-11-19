@@ -1,43 +1,253 @@
-body {
-  margin: none;
-  padding: none;
-    
-  background-color: #ffffff;
-  color: #131515;
+html {
   font-family: "Host Grotesk", "Poppins";
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
 
-  overflow-x: hidden;
+html * {
+  margin: 0;
+  padding: 0;
 }
 
 
-h1 {
-  font-size: 1.8em;
-  margin: 10px auto;
+header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(0, 0, 0, 1);
+  z-index: 100000;
 }
 
-h2 {
-  font-size: 1.5em;
-  margin-bottom: 0px;
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.header-img video {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.hamburger-icon {
+  opacity: 0.9;
+  width: 30px;
+  height: 4px;
+  position: fixed;
+  top: 30px;
+  right: 25px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+  z-index: 1001;
+}
+
+.hamburger-icon::before, .hamburger-icon::after {
+  content: '';
+  background-color: #fff;
+  width: 90%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.hamburger-icon::after {
+  top: -10px;
+}
+
+.hamburger-icon.clicked {
+  background-color: transparent;
+  z-index: 1003;
+}
+
+.hamburger-icon.clicked::before {
+  transform: rotate(45deg);
+  top: 0;
+  left: 50%;
+}
+
+.hamburger-icon.clicked::after {
+  transform: rotate(-45deg);
+  top: 0;
+  left: 50%;
+}
+
+/* Menu Container */
+.hamburger-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 32%;
+  background-color: #131515;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 60px;
+  z-index: 1002;
+}
+
+.hamburger-container-active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hamburger-container .hamburger-link {
+  display: none;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  height: 40px;
+  margin-right: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hamburger-container-active .hamburger-link {
+  display: block;
+}
+
+body.menuOpen .content-wrapper {
+  filter: blur(5px);
+}
+
+
+.hamburger-container .special-link {
+  color: black;
+  background-color: #ff5100;
+  padding: 2px 10px;
+  font-weight: 800;
+}
+
+
+
+body {
+
+  margin: none;
+  padding: none;
+
+  color: white;
+  font-family: "Host Grotesk", "Poppins";
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.contact-intro-container {
+  margin: 200px auto;
+  margin-bottom: 100px;
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.contact-title {
+  font-size: 3em;
+  font-family: "Bowbly One", "Host Grotesk", "Poppins";
+  font-weight: 900;
   text-align: center;
 }
 
-h3 {
-  margin: 0px 0px;
+.review-svc-container {
+  width: 100%;
+  background-color: #ff5100;
+  height: 200px;
+
+
+  color: black;
+  font-size: 1.4em;
+  font-weight: 700;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-p {
-  margin: 0px 0px;
+.review-svc-text {
+  width: 90%;
 }
 
-ul { margin: 5px;}
-
-section {
-  max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
+.review-svc-text a{
+  text-decoration: underline;
+  color: black;
 }
+
+/* -------------------FORM STYLING --------------------- */
+
+.contact-area {
+  width: 100%;
+  background-color: black;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  
+}
+
+.form-title {
+  margin: 30px auto;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.contact-container {
+  width: 95%;
+  background-color: white;
+}
+
+.contact-subtitle {
+  font-size: 1.8em;
+  color: black;
+}
+
+.section-choice {
+  display: flex;
+  
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.section-choice .form-check {
+  width: 100%;
+  height: 30px;
+  background-color: #efefef;
+  border: solid 1px gray;
+}
+
+#project-info-choice {
+  display: none;
+}
+
+#project-info, #company-info {
+  display: none;
+}
+
+
+
+
+
+/* 
 .body-alt {
   margin-top: 60px;
 }
@@ -258,39 +468,16 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.get-a-quote {
-  width: 90%;
-  margin: 0 auto;
-  height: fit-content;
-  border-radius: 20px;
+.orange {
+  color:#ff5100;
+  font-weight: 200;
+  font-size: 1.4em;
 }
-
-.dollar-quote-container {
-  grid-area: 2;
-  width: 100%;
-  max-width: 600px;
-  background-color: #ffffff;
-  box-sizing: border-box;
-  padding: 10px 30px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.info-quote-text {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
-
 
 .quote-form {
-  width: 100%;
+  width: 90%;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
@@ -323,7 +510,11 @@ section {
   height: 100px;
 }
 
-.quote-form button {
+
+
+
+
+.quote-form .submit-button {
   background-color: #29AB87;
   height: 50px;
   width: 130px;
@@ -333,7 +524,7 @@ section {
   text-shadow: rgba(39, 27, 7, 0.6) 1px 1px;
 }
 
-.quote-form button:active {
+.quote-form .submit-button:active {
   background-color: #48c19f;
 }
 
@@ -360,4 +551,14 @@ input::placeholder, textarea::placeholder {
 .brandkit-multiple option {
   font-weight: 700;
   margin: 5px auto;
+}
+
+
+#general-q {
+  display: none;
+}
+
+.general-inquiry {
+  width: 100%;
+  height: 200px;
 }

@@ -168,7 +168,6 @@ overlay.addEventListener('click', () => {
   // Show the iframe
   iframe.style.display = 'block';
   
-  // Hide the overlay itself (optional)
   overlay.style.display = 'none';
 });
 
