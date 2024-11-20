@@ -5,6 +5,9 @@ html {
   padding: 0;
   margin: 0;
   background-color: black;
+
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 html * {
@@ -34,6 +37,7 @@ a:hover {
   height: 100%;
   object-fit: cover;
 }
+
 
 
 .hamburger-icon {
@@ -256,6 +260,11 @@ label {
   background-color: #ff5100;
   cursor: pointer;
 }
+
+.form-check:focus {
+  background-color: red;
+}
+
 #project-info-choice {
   display: none;
 }
@@ -373,6 +382,133 @@ input::placeholder, textarea::placeholder {
   width: 100%;
   height: 200px;
 }
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  padding-bottom: 30px;
+}
+
+
+.links-container {
+  margin-top: 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.links-title {
+  border-bottom: solid 1px white;
+}
+
+
+.links-list ul {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.links-list ul, ul li a {
+  text-decoration: none;
+  font-style: none;
+  color: white;
+  list-style-type: none;
+}
+
+
+.footer-brand-container {
+  width: 100%;
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+
+.logo-video {
+  width: 40%;
+  object-fit: contain;
+}
+
+.socials-container {
+  margin-top: 20px;
+  width: 55%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.socials-text {
+  width: 100%;
+  text-align: left;
+}
+
+.socials-icons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+
+.socials-icons a img {
+  width: 30px;
+  max-height: 30px;
+  object-fit: contain;
+}
+
+.cell {
+  width: 200px;
+  color: black;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: -20px;
+}
+
+.cell a {
+  font-style: none;
+  color: black;
+  font-weight: 600;
+}
+
+.footer-text {
+  width: 85%;
+  text-align: center;
+  font-style: italic;
+}
+
+.footer-bottom {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  color: white;
+}
+
+.footer-bottom p a {
+  font-style: none;
+  color: white;
+}
+
+
 
 
 /* 
