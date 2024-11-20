@@ -26,11 +26,18 @@ header {
   z-index: 100000;
 }
 
+.h2title {
+  margin-top: 40px;
+  font-size: 2em;
+  font-weight: 800;
+  text-align: center;
+}
+
 .header-img video {
   height: 100%;
   object-fit: cover;
+  pointer-events: none; 
 }
-
 
 .hamburger-icon {
   opacity: 0.9;
@@ -79,7 +86,7 @@ header {
 
 /* Menu Container */
 .hamburger-container {
-  transform: translateX(-100%);
+  transform: translateX(100%);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.4s ease;
   position: fixed;
@@ -224,6 +231,57 @@ body.menuOpen .content-wrapper {
 .post-intro p {
   margin: 0;
   font-size: 1em;
+}
+
+.slideRight {
+  animation: slideRightAnimation both;
+  animation-timeline: view(70% 15%);
+}
+
+.slideLeft {
+  animation: slideLeftAnimation both;
+  animation-timeline: view(70% 15%);
+}
+
+.slideDown {
+  animation: slideDownAnimation both;
+  animation-timeline: view(70% 15%);
+}
+
+@keyframes slideDownAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateY(-10px) scale(0.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideLeftAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateX(100px) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideRightAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateX(-100px) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 .post-intro img {
@@ -408,8 +466,8 @@ body.menuOpen .content-wrapper {
   width: 100%;
   height: 600px;
   margin: 20px auto;
-  position: relative; /* To position the overlay on top of the image */
-  overflow: hidden; /* Ensure everything stays within bounds */
+  position: relative;
+  overflow: hidden;
 }
 
 .website-snippet img {
@@ -505,6 +563,7 @@ iframe::-webkit-scrollbar-thumb {
   width: 100%;
 
   overflow-x: hidden;
+  
 
   display: flex;
   flex-wrap: nowrap;
@@ -649,6 +708,7 @@ iframe::-webkit-scrollbar-thumb {
   text-decoration: none;
   color: white;
   font-size: 1.3em;
+  padding: 20px;
 }
 
 
