@@ -6,6 +6,7 @@ const menuContainer = document.querySelector('.hamburger-container');
 let menuOpen = false;
 
 hamburger.addEventListener('click', () => {
+  console.log('clicked')
   if (!menuOpen) {
     hamburger.classList.add('clicked');
     menuContainer.classList.add('hamburger-container-active');

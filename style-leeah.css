@@ -6,6 +6,8 @@ html {
   font-style: normal;
   padding: 0;
   margin: 0;
+  width: 100vw;
+  height: auto;
 }
 
 html * {
@@ -23,7 +25,14 @@ header {
   left: 0;
   width: 100vw;
   background: rgba(0, 0, 0, 1);
-  z-index: 100000;
+  z-index: 1000000000000;
+}
+
+i {
+  font-size: 0.4em;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .h2title {
@@ -43,7 +52,7 @@ header {
   opacity: 0.9;
   width: 30px;
   height: 4px;
-  position: fixed;
+  position: absolute;
   top: 30px;
   right: 25px;
   background-color: #fff;
