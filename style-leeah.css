@@ -42,7 +42,7 @@ i {
   text-align: center;
 }
 
-.header-img video {
+.header-img img {
   height: 100%;
   object-fit: cover;
   pointer-events: none; 
@@ -800,7 +800,7 @@ footer {
   gap: 10px;
 }
 
-.logo-video {
+.footer-brand-container img{
   width: 40%;
   object-fit: contain;
 }
