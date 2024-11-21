@@ -273,8 +273,30 @@ label {
   display: none;
 }
 
+.budget {
+  margin: 10px auto;
+  color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#budget-value {
+  font-weight: 800;
+  margin-top: 15px;
+  margin-bottom: -5px;
 
+}
+
+.slider-labels {
+  width: 105%;
+  
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: -10px;
+}
 
 
 .orange {

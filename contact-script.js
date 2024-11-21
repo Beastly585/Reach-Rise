@@ -59,6 +59,31 @@ noProjectButton.addEventListener('click', () => {
 })
 
 
+const slider = document.getElementById("budget");
+const budgetValue = document.getElementById("budget-value");
+
+
+slider.oninput = function() {
+  budgetValue.innerHTML = "$" + this.value;
+
+  // Calculate the percentage of the slider value
+  const percentage = (this.value - 500) / (5000 - 500); // Range from 0 to 1
+
+  if (this.value >= 5000) {
+    budgetValue.innerHTML = "$5000+";
+  } else {
+    budgetValue.innerHTML = "$" + this.value;
+  }
+
+  // Dynamically adjust the thumb color based on the slider value
+  const red = Math.min(255, Math.floor(255 * percentage)); // Increase red as the value increases
+  const green = 255 - red; // Decrease green as the value increases
+  const thumbColor = `rgb(${red}, ${green}, 0)`; // Use RGB color
+  
+  // Update the thumb color dynamically
+  slider.style.setProperty('--thumb-color', thumbColor);
+};
+
 
 
 

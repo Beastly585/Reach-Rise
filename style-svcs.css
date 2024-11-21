@@ -136,8 +136,23 @@ body.menuOpen .content-wrapper {
   font-weight: 800;
 }
 
+.margin-40 {
+  margin-top: 80px;
+  box-sizing: border-box;
 
+}
 
+.white-bg {
+  padding-top: 80px;
+  background-color: white;
+  color: black;
+  padding-bottom: 40px;
+}
+
+.white-bg .content-subtitle {
+  color: white;
+  background-color: black;
+}
 
 .intro-section {
   position: relative;
@@ -150,8 +165,9 @@ body.menuOpen .content-wrapper {
 #particles-js {
   position: absolute;
   background-color: black;
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  margin-left: -2%;
   top: 0;
   left: 0;
   z-index: -1;
@@ -182,12 +198,11 @@ body.menuOpen .content-wrapper {
 }
 
 
-
 .svc-container-title {
   position: relative;
   width: 100%;
   margin: 30px auto;
-  margin-bottom: 400px;
+  text-align: center;
 }
 
 
@@ -196,6 +211,7 @@ body.menuOpen .content-wrapper {
   font-size: 3em;
   font-family: "Bowbly One", "Host Grotesk", "Poppins";
   font-weight: 800;
+  margin-left: -40px;
 }
 
 .title-number {
@@ -206,6 +222,69 @@ body.menuOpen .content-wrapper {
   opacity: 0.3;
   font-family: "Bowbly One", "Host Grotesk", "Poppins";
   font-weight: 900;
+}
+
+.content-container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.content-subsection {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.content-subtitle {
+  color: black;
+  background-color: white;
+  padding: 2px 10px;
+  font-size: 1.4em;
+  width: 100%;
+  text-align: center;
+}
+
+.content-subdesc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  list-style: none;
+}
+
+.content-list li {
+  font-size: 1em;
+}
+
+.sub-subtitle {
+  background-color: white;
+  color: black;
+  padding: 2px 4px;
+  font-weight: 800;
+  font-size: 1.1em;
+  line-height: 30px;
+}
+
+
+
+
+.sublist {
+  padding-left: 40px;
 }
 
 
@@ -340,3 +419,78 @@ footer {
   color: white;
 }
 
+
+
+.slideRight {
+  will-change: transform, opacity;
+
+  animation: slideRightAnimation both;
+  animation-timeline: view(70% 15%);
+}
+
+.slideLeft {
+  will-change: transform, opacity;
+
+  animation: slideLeftAnimation both;
+  animation-timeline: view(70% 15%);
+}
+
+
+.autoShow {
+  animation: autoShowAnimation both;
+  animation-timeline: view(50% 0%);
+}
+
+.autoShowLowOpacity {
+  animation: autoShowLowOpacity both;
+  animation-timeline: view(80% 10%);
+}
+
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes autoShowLowOpacity {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes slideLeftAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateX(100px) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideRightAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateX(-100px) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
