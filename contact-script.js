@@ -48,33 +48,65 @@ yesProject.addEventListener('click', () => {
   }
 })
 
-
-
 const slider = document.getElementById("budget");
 const budgetValue = document.getElementById("budget-value");
+const budgetDescription = document.getElementById("budget-description");
 
+// Dynamically update the slider's thumb and background colors
+slider.oninput = function () {
+  const value = this.value;
 
-slider.oninput = function() {
-  budgetValue.innerHTML = "$" + this.value;
-
-  // Calculate the percentage of the slider value
-  const percentage = (this.value - 500) / (5000 - 500); // Range from 0 to 1
-
-  if (this.value >= 5000) {
-    budgetValue.innerHTML = "$5000+";
-  } else {
-    budgetValue.innerHTML = "$" + this.value;
+  // Update the budget value
+  budgetValue.innerHTML = `$${value}`;
+  if (value >= 5000) {
+    budgetValue.innerHTML = ">$5000";
+  } else if (value <= 500) {
+    budgetValue.innerHTML = "<$500";
   }
 
-  // Dynamically adjust the thumb color based on the slider value
-  const red = Math.min(255, Math.floor(255 * percentage)); // Increase red as the value increases
-  const green = 255 - red; // Decrease green as the value increases
-  const thumbColor = `rgb(${red}, ${green}, 0)`; // Use RGB color
-  
-  // Update the thumb color dynamically
-  slider.style.setProperty('--thumb-color', thumbColor);
-};
+  // Update the color based on the slider's value (neutral scale)
+  const percentage = (value - 500) / (5000 - 500); // Scale to 0-1
+  const color1 = "white"; // Starting color
+  const color2 = "orangered"; // Midpoint color
+  const color3 = "fuchsia"; // End color
 
+  const mixColor = (start, end, ratio) =>
+    Math.round(start + (end - start) * ratio);
+
+  // Convert percentage to RGB blending
+  const r = mixColor(
+    mixColor(255, 255, Math.min(percentage * 2, 1)),
+    255,
+    Math.max(percentage - 0.5, 0) * 2
+  );
+  const g = mixColor(
+    mixColor(255, 69, Math.min(percentage * 2, 1)),
+    0,
+    Math.max(percentage - 0.5, 0) * 2
+  );
+  const b = mixColor(
+    mixColor(255, 0, Math.min(percentage * 2, 1)),
+    255,
+    Math.max(percentage - 0.5, 0) * 2
+  );
+
+  this.style.background = `rgb(${r}, ${g}, ${b})`;
+
+  // Update the budget description
+  if (value < 1000) {
+    budgetDescription.innerText =
+      "A great starting point for small, essential projects.";
+  } else if (value < 2500) {
+    budgetDescription.innerText =
+      "Perfect for medium-sized websites with some extra features";
+  } else if (value < 4000) {
+    budgetDescription.innerText =
+      "Ideal for comprehensive designs with advanced functionality.";
+  } else {
+    budgetDescription.innerText =
+      "Premium designs and full-service development";
+  }
+};
 
 
 

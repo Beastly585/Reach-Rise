@@ -196,13 +196,11 @@
             </div>
 
             <div class="budget contact-subsection">
-              <label for="budget" class="budget-title">What's your budget?<span class="orange">*</span></label>
-              <div id="budget-value">$5000</div>
-              <input type="range" id="budget" class="budget-slide" name="budget" min="500" max="5001" step="100" value="5000">
-              <div class="slider-labels">
-                <span class="min-label">$500</span>
-                <span class="max-label">$5,000+</span>
-              </div>
+              <label for="budget" class="budget-title">What's your budget?<span class="orange">*</span><span class="adjust-note" style="font-size: 0.8em; opacity: 0.6;">(use the slider to adjust)</span>
+              </label>
+              <div id="budget-value">$1000</div>
+              <input type="range" id="budget" class="budget-slide" name="budget" min="490" max="5010" step="10" value="1000">
+              <div id="budget-description" class="budget-description">A great starting point for small, essential projects.</div>
             </div>
             
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
