@@ -33,8 +33,8 @@
   <section>
     <div class="contact-intro-container">
       <h1 class="contact-title">READY TO <br> LEVEL-UP YOUR BRAND?</h1>
-      <div class="contact-intro-desc">What do you envision for your business? What goals are you striving for?</div>
-      <div class="contact-intro-desc">Whether you have a specific project in mind or just know you're ready for a change, I'm here for you.</div>
+      <!-- <div class="contact-intro-desc">What do you envision for your business? What goals are you striving for?</div>
+      <div class="contact-intro-desc">Whether you have a specific project in mind or just know you're ready for a change, I'm here for you.</div> -->
       <div class="contact-intro-desc">Fill in a <a>contact form</a> and we'll be discussing how to take your brand to the next-level in no time!</div>
 
     </div>
@@ -50,25 +50,152 @@
 
   <section>
     <div class="contact-area">
+
+
       <h2 class="form-title">CONTACT FORM</h2>
 
       <div class="contact-container">
-
 
           <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="121c383f-0684-48e6-b6a8-46a88bc74195">
 
             <div class="general-info-container contact-subsection">
-              <h3 class="contact-subtitle">GENERAL</h3>
+              <!-- <h3 class="contact-subtitle">GENERAL</h3> -->
               <label for="name">your name<span class="orange">*</span></label>
               <input type="text" name="name" class="quote-item name" id="name" placeholder="Your name" required>
     
               <label for="email">your email<span class="orange">*</span></label>
               <input type="text" name="email" class="quote-item name" id="email" placeholder="Your email" required>
+              
+              <label for="general-text">Please state your interest<span class="orange">*</span></label>
+              <textarea name="general-inquiry" id="general-text" class="general-inquiry quote-area" placeholder="Please state your inquiry here" required></textarea>
+
+            </div>
+
+            <div class="optional-info-macro">
+
+                <div class="optional-container contact-subsection">
+                  
+                  <button class="option-choose" id="company-expand" type="button">Want to add company information? (optional)<i class="fa-solid fa-chevron-down"></i></button>
+                  <div class="company-info-container hidden-info-container" id="company-info">
+                    <!-- <h3 class="contact-subtitle">COMPANY</h3> -->
+                  
+                    <label for="company-name" style = "margin-top: 20px">company name<span class="orange">*</span></label>
+                    <input type="text" name="company-name" class="quote-item business" id="company-name" placeholder="Company Name"
+                      required>
+                  
+                    <label for="company-phone">company phone</label>
+                    <input type="text" name="company-phone" class="quote-item phone" id="company-phone" placeholder="Company Phone">
+                  
+                    <label for="business-address">company address</label>
+              
+                      <input type="text" name="business-address" class="quote-item address" id="business-address" placeholder="Address">
+                      <input type="text" name="business-city" class="quote-item address city" id="business-city" placeholder="City">
+                      <input type="text" name="business-zip" class="quote-item address zip" id="business-zip" placeholder="ZIP / Postal">
+                      <input type="text" name="business-state" class="quote-item address state" id="business-state" placeholder="State/Region">
+            
+                  
+                      <label for="company-description">briefly describe your company<span class="orange">*</span></label>
+                      <input type="text" name="company-description" class="company-description quote-item" id="company-description"
+                      placeholder="Company Description" required>
+                  
+                  
+                    <label for="company-services">top 3 services do you offer<span class="orange">*</span></label>
+                    <input type="text" name="company-services" class="quote-item company-services" id="company-services"
+                      placeholder="List the Main Services your Company Offers" required>
+                  
+                    <label for="current-website">current website URL (if you have one)</label>
+                    <input type="website" name="website" class="quote-item website" id="current-website"
+                      placeholder="Current Website URL">
+                  
+                  </div>
+                </div>
+
+                <div class="optional-container contact-subsection">
+                
+                  <button class="option-choose" id="project-expand" type="button">Want to add project specifics? (optional)<i
+                      class="fa-solid fa-chevron-down"></i></button>
+                  <div class="project-info-container hidden-info-container" id="project-info">
+                    <!-- <h3 class="contact-subtitle">COMPANY</h3> -->
+                
+                    <label for="service-select" style="margin-top: 20px">What kind of service?<span class="orange">*</span></label>
+                    <select id="service-select" name="service"
+                      style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box;">
+                      <option value="optional">--Choose a service--</option>
+                      <option value="new">New Website</option>
+                      <option value="upgrade">Upgrade Current Website</option>
+                      <option value="tweak">Tweaks</option>
+                      <option value="maintenance">Maintenance</option>
+                      <option value="brand">Branding - Logos, Flyers, Social Media, etc.</option>
+                      <option value="other">Other</option>
+                    </select>
+                
+                
+                
+                    <div class="input-group" id="new">
+                      <label for="new-site-name">What's the purpose of this website?<span class="orange">*</span></label>
+                      <input type="text" name="new-website-name" id="new-site-name" placeholder="Describe why you want a new website"
+                        required>
+                
+                      <label for="special-features">Will your site needs specific features?</label>
+                      <input type="text" name="special-features" id="special-features"
+                        placeholder="i.e. - Booking Calendar, Online Marketplace">
+                
+                      <label for="template">Do you have a template you like?</label>
+                      <input type="text" name="template" id="template" placeholder="URL to template you'd like to emulate">
+                
+                      <label for="url-pref">What URL do you want your new site to have?</label>
+                      <input type="text" name="url-pref" id="url-pref" placeholder="Desired URL">
+                    </div>
+                
+                    <div class="input-group" id="upgrade">
+                      <label for="desired-upgrades">What changes do you want made to your current site?</label>
+                      <textarea type="text" name="desired-upgrades" id="desired-upgrades"
+                        placeholder="Describe the changes you want made to your current site"></textarea>
+                
+                      <label for="template">Do you have a template you like?</label>
+                      <input type="text" name="template" id="template" placeholder="URL to template you'd like to emulate">
+                    </div>
+                
+                    <div class="input-group" id="tweak">
+                      <div class="tweak-notice" style="opacity: 0.7; color: black; margin-bottom: 20px; text-align: center;">NOTE: this option is for <strong>very minor changes</strong></div>
+                      <label for="tweak-what">what will I be tweaking?</label>
+                      <input name="tweak-what" id="tweak-what" placeholder="Website? Logos?">
+                
+                      <label for="tweak-details">desired tweaks</label>
+                      <textarea name="tweak-details" id="tweak-details" placeholder="What Changes do you Need Made?"></textarea>
+                    </div>
+                
+                    <div class="input-group" id="brand">
+                
+                      <label for="select-brandkit">What media type?</label>
+                      <select name="select-brandkit" id="select-brandkit" size="5" class="brandkit-multiple" style="margin-top: 2px;">
+                        <option value="logo">Brandkit - Logo package</option>
+                        <option value="profile-image">Social Media - Profile Picture, Banners</option>
+                        <option value="campaign">New Campaign - Flyers, Billboards, etc.</option>
+                      </select>
+                
+                      <label for="select-brand-details">Additional details:</label>
+                      <textarea name="select-brand-detail" id="select-brand-details"
+                        placeholder="Do you have a vision already? Any details you'd like to share? (i.e. favorite colors, other logos you like)"></textarea>
+                    </div>
+                
+                
+                    <div class="input-group" id="other">
+                
+                      <label for="other-details">Your request type isn't listed?</label>
+                      <textarea name="other-details" id="other-details"
+                        placeholder="Please provide as much info about your inquiry as possible here."></textarea>
+                    </div>
+                  </div>
+                
+                
+                
+                </div>
   
             </div>
 
-            <div class="budget">
+            <div class="budget contact-subsection">
               <label for="budget" class="budget-title">What's your budget?<span class="orange">*</span></label>
               <div id="budget-value">$5000</div>
               <input type="range" id="budget" class="budget-slide" name="budget" min="500" max="5001" step="100" value="5000">
@@ -76,155 +203,8 @@
                 <span class="min-label">$500</span>
                 <span class="max-label">$5,000+</span>
               </div>
-          
-              
-            </div>
-
-
-            
-            <div class="section-choice" id="company-info-choice">
-              <label>Is this for your company?<span class="orange">*</span></label>
-              <button class="form-check company-qy form-yes">Yes</button>
-              <button class="form-check company-qn form-no">No</button>
-            </div>
-
-
-            <div class="company-info-container contact-subsection" id="company-info">
-              <h3 class="contact-subtitle">COMPANY</h3>
-  
-              <label for="company-name">company name<span class="orange">*</span></label>
-              <input type="text" name="company-name" class="quote-item business" id="company-name" placeholder="Company Name" required>
-    
-              <label for="company-phone">company phone</label>
-              <input type="text" name="company-phone" class="quote-item phone" id="company-phone" placeholder="Company Phone">
-    
-              <label for="business-address">company address</label>
-              <div class="address-inputs">
-                <input type="text" name="business-address" class="quote-item address" id="business-address" placeholder="Address">
-                <input type="text" name="business-city" class="quote-item city" id="business-city" placeholder="City">
-                <input type="text" name="business-zip" class="quote-item zip" id="business-zip" placeholder="ZIP / Postal">
-                <input type="text" name="business-state" class="quote-item state" id="business-state" placeholder="State/Region">
-              </div>
-    
-              <label for="company-description">briefly describe your company<span class="orange">*</span></label>
-              <input type="text" name="company-description" class="company-description" id="company-description" placeholder="Company Description" required>
-    
-              
-              <label for="company-services">what services do you offer?<span class="orange">*</span></label>
-              <input type="text" name="company-services" class="quote-item company-services" id="company-services" placeholder="List the Main Services your Company Offers" required>
-    
-              <!-- <label for="business-address">How can i get you closer to your goals?</label>
-              <input type="text" name="business-address" class="quote-item address" id="client-goals" placeholder="Benefits you Hope Will Come from Working Together"> -->
-    
-              <label for="current-website">current website URL (if you have one)</label>
-              <input type="website" name="website" class="quote-item website" id="current-website" placeholder="Current Website URL">
-              
-            </div>
-
-            <div class="section-choice" id="project-info-choice">
-              <label>Do you have a specific project in mind?<span class="orange">*</span></label>
-              <button class="form-check project-qy form-yes">Yes</button>
-              <button class="form-check project-qn form-no">No</button>
             </div>
             
-            <div class="project-info-container contact-subsection" id="project-info">
-              <h3 class="contact-subtitle">PROJECT</h3>
-              <div class="project-intro">Select a project-type from the dropdown below:</div>
-              <!-- <label for="service-select">Select Service:</label> -->
-    
-    
-              <select id="service-select" name="service" style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box;">
-                <option value="optional">--Choose a service--</option>
-                <option value="new">New Website</option>
-                <option value="upgrade">Upgrade Current Website</option>
-                <option value="tweak">Tweaks</option>
-                <option value="maintenance">Maintenance</option>
-                <option value="consultation">Consultation</option>
-                <option value="brand">Brandkits - Logos, Flyers, Icons, etc.</option>
-                <option value="other">Other</option>
-              </select>
-    
-    
-              <div class="input-group" id="new">
-                <label for="new-site-name">What will this site be for?<span class="orange">*</span></label>
-                <input type="text" name="new-website-name" id="new-site-name" placeholder="Describe why you want a new website" required>
-    
-                <label for="special-features">will your site needs specific features?</label>
-                <input type="text" name="special-features" id="special-features" placeholder="i.e. - Booking Calendar, Online Marketplace">
-    
-                <label for="template">Do you have a template you like?</label>
-                <input type="text" name="template" id="template" placeholder="URL to template you'd like to emulate">
-    
-                <label for="url-pref">What URL do you want your new site to have?</label>
-                <input type="text" name="url-pref" id="url-pref" placeholder="Desired URL">
-              </div>
-              
-              <div class="input-group" id="upgrade">
-                <label for="desired-upgrades">What changes do you want made to your current site?<span class="orange">*</span></label>
-                <textarea type="text" name="desired-upgrades" id="desired-upgrades" placeholder="Describe the changes you want made to your current site" required></textarea>
-    
-                <label for="template">Do you have a template you like?</label>
-                <input type="text" name="template" id="template" placeholder="URL to template you'd like to emulate">
-              </div>
-              
-              <div class="input-group" id="tweak">
-                <div class="tweak-notice" style="opacity: 0.7; margin-bottom: 20px;">NOTE: this option is for very minor changes</div>
-                <label for="tweak-what">what will I be tweaking?</label>
-                <input name="tweak-what" id="tweak-what" placeholder="tweaking your website? Your logo? Flyers?">
-    
-                <label for="tweak-details">desired tweaks</label>
-                <textarea name="tweak-details" id="tweak-details" placeholder="what changes do you need made?"></textarea>
-              </div>
-    
-              <div class="input-group" id="consultation">
-    
-                <label for="select-consult">Select a consultation:</label>
-                <select name="select-consult" id="select-consult" style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box; margin-bottom: 20px;">
-                  <option value="optional">--Choose a consultation--</option>
-                  <optgroup label="DESIGN" style="color: rgba(0,0,0,0.9)">
-                    <option value="design">New Website</option>
-                    <option value="design">UX/UI</option>
-                    <option value="design">Brandkits - logos, company media</option>
-                  </optgroup>
-                  <optgroup label="CLIENT REACH">
-                    <option value="client">SEO Analysis</option>
-                    <option value="client">Google Analytics Review</option>
-                    <option value="client">Marketing Strategy</option>
-                  </optgroup>
-                </select>
-    
-                <textarea name="consultation-details" placeholder="please provide details about your issue and how i can help."></textarea>
-              </div>
-    
-              <div class="input-group" id="brand">
-    
-                <label for="select-brandkit">What media types are you looking for?</label>
-                <select name="select-brandkit" id="select-brandkit"  size="5" class="brandkit-multiple" style="margin-top: 2px;">
-                  <option value="logo">Brandkit - Logo package</option>
-                  <option value="profile-image">Social Media - Profile pic, banners</option>
-                  <option value="flyer">Flyer</option>
-                  <option value="campaign">New Campaign - flyers, billboards, etc.</option>
-                </select>
-                
-                <label for="select-brand-details">Please share some details of what you're looking for:</label>
-                <textarea name="select-brand-detail" id="select-brand-details" placeholder="Do you have a vision already? Any details you'd like to share? (i.e. favorite colors, other logos you like)"></textarea>
-              </div>
-    
-    
-              <div class="input-group" id="other">
-                
-                <label for="other-details">Your request type isn't listed?</label>
-                <textarea name="other-details" id="other-details" placeholder="Please provide as much info about your inquiry as possible here."></textarea>
-              </div>
-            </div>
-            
-            <div class="general-q" id="general-q">
-              <label for="general-text">Please write your reason for reaching out <span class="orange">*</span></label>
-              <textarea name="general-inquiry" id="general-text" class="general-inquiry" placeholder="Please state your inquiry here" required></textarea>
-
-            </div>
-          
-  
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <button class="submit-button" type="submit">SUBMIT</button>
           </form>

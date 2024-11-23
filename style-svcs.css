@@ -508,4 +508,73 @@ footer {
 .footer-brand-container img{
   width: 40%;
   object-fit: contain;
+  max-width: 140px;
+}
+
+
+
+
+.contact-container {
+  width: 90%;
+  margin: 20px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.contact-button {
+  position: relative;
+  margin-top: 40px;
+  height: 180px;
+  width: 180px;
+  border-radius: 90px;
+  background-color: black;
+  transition: ease-in-out 0.3s;
+}
+
+.contact-button::after {
+  content:'';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transform: scale(1.2);
+  z-index: -1;
+  background: conic-gradient(orange, orangered, rgb(255, 0, 0), rgb(255, 0, 132), rgb(255, 0, 0), orangered, orange);
+  /* background: conic-gradient(red, orange, yellow, green, blue, indigo, violet, red); */
+  animation: lazySpin 7s infinite;
+}
+
+.contact-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.contact-button:hover a{
+  font-weight: 900;
+}
+
+.contact-button:hover {
+  transform: scale(1.1);
+}
+
+
+@keyframes lazySpin {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1); /* Midpoint with slight scaling */
+  }
+  100% {
+    transform: rotate(360deg) scale(1.05);
+  }
 }

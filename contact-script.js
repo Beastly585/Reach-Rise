@@ -21,42 +21,33 @@ hamburger.addEventListener('click', () => {
   }
 });
 
-// Grab all the buttons in the form
-const yesCompanyButton = document.querySelector('.company-qy');
-const noCompanyButton = document.querySelector('.company-qn');
 
-const yesProjectButton = document.querySelector('.project-qy');
-const noProjectButton = document.querySelector('.project-qn');
 
-const companySection = document.querySelector('#company-info');
-const projectSection = document.querySelector('#project-info')
+const yesCompany = document.querySelector('#company-expand');
+const yesProject = document.querySelector('#project-expand');
+const project = document.querySelector('.project-info-container');
+const company = document.querySelector('.company-info-container')
 
-const projectChoice = document.querySelector("#project-info-choice");
-const lazyQ = document.querySelector('#general-q');
+console.log(yesCompany)
 
-yesCompanyButton.addEventListener('click', () => {
-  companySection.style.display = 'flex';
-  companySection.scrollIntoView();
-  projectChoice.style.display = 'flex';
-}
-)
-
-noCompanyButton.addEventListener('click', () => {
-  companySection.style.display = 'none';
-  projectChoice.style.display = 'flex';
-  projectChoice.scrollIntoView();
-});
-
-yesProjectButton.addEventListener('click', () => {
-  projectSection.style.display = 'flex';
-  projectSection.scrollIntoView();
+yesCompany.addEventListener('click', () => {
+  console.log('clicked')
+  if (company.style.display === 'none' || company.style.display === '') {
+    company.style.display = 'flex';
+  } else {
+    company.style.display = 'none';
+  }
 })
 
-noProjectButton.addEventListener('click', () => {
-  projectSection.style.display = 'none';
-  lazyQ.style.display = 'block';
-  lazyQ.scrollIntoView();
+yesProject.addEventListener('click', () => {
+  console.log('clicked')
+  if (project.style.display === 'none' || project.style.display === '') {
+    project.style.display = 'flex';
+  } else {
+    project.style.display = 'none';
+  }
 })
+
 
 
 const slider = document.getElementById("budget");
@@ -89,42 +80,37 @@ slider.oninput = function() {
 
 
 
+const serviceSelectItems = document.querySelectorAll('.ss');
+const exitButton = document.querySelector('.ss-exit');
+const hiwContainers = document.querySelectorAll('.hiw-container');
 
+serviceSelectItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    // Remove .ss-clicked from all items, hide all .hiw-container elements, and hide exit button
+    serviceSelectItems.forEach((el) => el.classList.remove('ss-clicked'));
+    hiwContainers.forEach((container) => container.style.display = 'none');
+    document.querySelectorAll('.avg-timeline').forEach((avgTime) => avgTime.style.display = 'none');
+    exitButton.classList.add('ss-exit-active'); // Show the exit button
 
+    // Add .ss-clicked to the clicked item
+    item.classList.add('ss-clicked');
 
-
-
-// const serviceSelectItems = document.querySelectorAll('.ss');
-// const exitButton = document.querySelector('.ss-exit');
-// const hiwContainers = document.querySelectorAll('.hiw-container');
-
-// serviceSelectItems.forEach((item) => {
-//   item.addEventListener('click', () => {
-//     // Remove .ss-clicked from all items, hide all .hiw-container elements, and hide exit button
-//     serviceSelectItems.forEach((el) => el.classList.remove('ss-clicked'));
-//     hiwContainers.forEach((container) => container.style.display = 'none');
-//     document.querySelectorAll('.avg-timeline').forEach((avgTime) => avgTime.style.display = 'none');
-//     exitButton.classList.add('ss-exit-active'); // Show the exit button
-
-//     // Add .ss-clicked to the clicked item
-//     item.classList.add('ss-clicked');
-
-//     // Display the relevant .hiw-container based on the clicked .ss type
-//     if (item.classList.contains('ss-new')) {
-//       document.querySelector('.avg-new').style.display = 'block';
-//       document.querySelector('.hiw-container-new').style.display = 'flex';
-//     } else if (item.classList.contains('ss-upgrade')) {
-//       document.querySelector('.avg-upgrade').style.display = 'block';
-//       document.querySelector('.hiw-container-upgrade').style.display = 'flex';
-//     } else if (item.classList.contains('ss-tweaks')) {
-//       document.querySelector('.avg-tweak').style.display = 'block';
-//       document.querySelector('.hiw-container-tweaks').style.display = 'flex';
-//     } else if (item.classList.contains('ss-consultation')) {
-//       document.querySelector('.avg-consult').style.display = 'block';
-//       document.querySelector('.hiw-container-consult').style.display = 'flex';
-//     }
-//   });
-// });
+    // Display the relevant .hiw-container based on the clicked .ss type
+    if (item.classList.contains('ss-new')) {
+      document.querySelector('.avg-new').style.display = 'block';
+      document.querySelector('.hiw-container-new').style.display = 'flex';
+    } else if (item.classList.contains('ss-upgrade')) {
+      document.querySelector('.avg-upgrade').style.display = 'block';
+      document.querySelector('.hiw-container-upgrade').style.display = 'flex';
+    } else if (item.classList.contains('ss-tweaks')) {
+      document.querySelector('.avg-tweak').style.display = 'block';
+      document.querySelector('.hiw-container-tweaks').style.display = 'flex';
+    } else if (item.classList.contains('ss-consultation')) {
+      document.querySelector('.avg-consult').style.display = 'block';
+      document.querySelector('.hiw-container-consult').style.display = 'flex';
+    }
+  });
+});
 
 
 // // Add click event to exit button to hide the expanded view
