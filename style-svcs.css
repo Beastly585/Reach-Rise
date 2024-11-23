@@ -145,16 +145,15 @@ body.menuOpen .content-wrapper {
 }
 
 .margin-40 {
-  margin-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 40px;
   box-sizing: border-box;
-
 }
 
 .white-bg {
   padding-top: 80px;
   background-color: white;
   color: black;
-  padding-bottom: 40px;
 }
 
 .white-bg .content-subtitle {

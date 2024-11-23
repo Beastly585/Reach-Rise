@@ -6,7 +6,6 @@ const menuContainer = document.querySelector('.hamburger-container');
 let menuOpen = false;
 
 hamburger.addEventListener('click', () => {
-  console.log('clicked')
   if (!menuOpen) {
     hamburger.classList.add('clicked');
     menuContainer.classList.add('hamburger-container-active');
@@ -132,45 +131,62 @@ const navContainer = document.querySelector('.nav-container');
 const navItems = document.querySelectorAll('.nav-container nav');
 const sections = document.querySelectorAll('.section-var');
 
-
-
-const hiwContainer = document.querySelector('.hiw-container');
-const scrollIndicator = document.querySelector('.scroll-indicator');
-const slides = document.querySelectorAll('.hiw-slide');
+const hiwSlides = document.querySelectorAll('.hiw-slide');
+const scrollbar = document.querySelector('.scrollbar-new');
 const currentSlide = document.querySelector('.current-slide');
+const hiwContainer = document.querySelector('.hiw-container');
 
-hiwContainer.addEventListener('scroll', updateScrollbar);
+// Function to update the visible slide and current slide text
+function updateSlide(index) {
+  // Ensure the index is within bounds
+  const validIndex = Math.max(0, Math.min(index, hiwSlides.length - 1));
 
-// Update the scrollbar position based on the container scroll
-function updateScrollbar() {
-  const containerWidth = hiwContainer.scrollWidth - hiwContainer.clientWidth + 35;
-  const scrollPosition = hiwContainer.scrollLeft;
-  const scrollPercentage = (scrollPosition / containerWidth) * 100;
+  // Scroll to the selected slide
+  hiwSlides[validIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
 
-  // Update the width of the scroll indicator
-  scrollIndicator.style.left = `${scrollPercentage}%`;
-  
-  // Determine which slide is in view
-  const visibleSlideIndex = Math.floor(scrollPosition / hiwContainer.offsetWidth);
-  const slide = slides[visibleSlideIndex];
-  
-  // Update the current slide title (this is optional, you can modify this behavior)
-  currentSlide.textContent = `Step ${visibleSlideIndex + 1}: ${slide.querySelector('.hiw-title').textContent}`;
+  // Update the current slide text
+  const slideTitle = hiwSlides[validIndex].querySelector('.hiw-title').textContent;
+  currentSlide.textContent = `Step ${validIndex + 1}: ${slideTitle}`;
+
+  // Sync the scrollbar with the visible slide
+  scrollbar.value = validIndex + 1; // +1 because the range input is 1-based
 }
 
-const previewImg = document.querySelector('.preview-img');
-const iframe = document.querySelector('.interactive');
-const overlay = document.querySelector('.iframe-overlay');
-
-overlay.addEventListener('click', () => {
-  // Hide the preview image
-  previewImg.style.display = 'none';
-  
-  // Show the iframe
-  iframe.style.display = 'block';
-  
-  overlay.style.display = 'none';
+// Add an event listener for the scrollbar
+scrollbar.addEventListener('input', (event) => {
+  const selectedIndex = parseInt(event.target.value, 10) - 1; // Convert from 1-based to 0-based
+  updateSlide(selectedIndex);
 });
+
+// Add an event listener for scrolling in the container
+hiwContainer.addEventListener('scroll', () => {
+  // Calculate which slide is mostly in view
+  const containerScrollLeft = hiwContainer.scrollLeft;
+  const containerWidth = hiwContainer.clientWidth;
+
+  let visibleIndex = 0;
+  let maxVisibility = 0;
+
+  hiwSlides.forEach((slide, index) => {
+    const slideLeft = slide.offsetLeft;
+    const slideRight = slideLeft + slide.offsetWidth;
+
+    // Calculate how much of the slide is in view
+    const visibleWidth = Math.min(slideRight, containerScrollLeft + containerWidth) - Math.max(slideLeft, containerScrollLeft);
+    if (visibleWidth > maxVisibility) {
+      maxVisibility = visibleWidth;
+      visibleIndex = index;
+    }
+  });
+
+  // Update the current slide text and scrollbar
+  const visibleSlideTitle = hiwSlides[visibleIndex].querySelector('.hiw-title').textContent;
+  currentSlide.textContent = `Step ${visibleIndex + 1}: ${visibleSlideTitle}`;
+  scrollbar.value = visibleIndex + 1; // Sync scrollbar
+});
+
+// Initialize to the first slide
+updateSlide(0);
 
 
 const reviewSlides = document.querySelectorAll('.review-slide');
