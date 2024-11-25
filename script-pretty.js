@@ -1,3 +1,9 @@
+window.onload = () => {
+  if (window.location.hash === "") {
+    window.scrollTo(0, 0);
+  }
+};
+
 const blur = document.querySelector(".content-wrapper");
 const hamburger = document.querySelector('.hamburger-icon');
 const menuContainer = document.querySelector('.hamburger-container');

@@ -48,6 +48,11 @@ i {
   pointer-events: none; 
 }
 
+.header-img a {
+  height: 100%;
+  position: absolute;
+}
+
 .hamburger-icon {
   opacity: 0.9;
   width: 30px;
@@ -765,6 +770,9 @@ body.menuOpen .content-wrapper {
 
 
 
+
+
+
 footer {
   width: 100%;
   display: flex;
@@ -773,6 +781,10 @@ footer {
   gap: 20px;
 
   padding-bottom: 30px;
+}
+
+.footer-laptop {
+  display: none;
 }
 
 
@@ -895,6 +907,84 @@ footer {
   color: white;
 }
 
+@media (min-width: 770px) {
+
+  .footer-mobile {
+    display: none;
+  }
+
+  .footer-laptop {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+
+  .footer-top {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    height: 180px;
+  }
+
+  .logo-vertical {
+    width: 15%;
+    
+    display: flex;
+    align-items: center;
+    /* transform: rotate(-90deg); */
+  }
+
+  .logo-footer {
+    width: 120%;
+    object-fit: contain;
+  }
+
+  .links-container {
+    width: 50%;
+
+  }
+
+  .socials-right {
+    width: 15%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+  }
+
+
+  .footer-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .copy-cont a {
+    color: white;
+    font-style: none;
+  }
+
+
+}
 
 
 .slideRight {

@@ -21,30 +21,81 @@ hamburger.addEventListener('click', () => {
   }
 });
 
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 100, density: { enable: true, value_area: 800 } },
+    color: { value: ['#ff007f', '#ff4500'] }, // Fuchsia and OrangeRed
+    shape: { type: 'circle' },
+    opacity: {
+      value: 0.7,
+      random: false,
+      anim: { enable: false }
+    },
+    size: {
+      value: 6,
+      random: true,
+      anim: { enable: true, speed: 2, size_min: 0.2 }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: '#ff007f', // Fuchsia for lines
+      opacity: 0.5,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 3,
+      direction: 'none',
+      random: false,
+      straight: false,
+      out_mode: 'out',
+      bounce: false
+    }
+  },
+  interactivity: {
+    detect_on: 'canvas',
+    events: {
+      onhover: { enable: true, mode: 'repulse' },
+      onclick: { enable: true, mode: 'push' },
+      resize: true
+    },
+    modes: {
+      repulse: { distance: 100, duration: 0.7 },
+      push: { particles_nb: 8 }
+    }
+  },
+  retina_detect: true
+});
+
 
 
 const yesCompany = document.querySelector('#company-expand');
 const yesProject = document.querySelector('#project-expand');
 const project = document.querySelector('.project-info-container');
-const company = document.querySelector('.company-info-container')
+const company = document.querySelector('.company-info-container');
 
 console.log(yesCompany)
 
 yesCompany.addEventListener('click', () => {
   console.log('clicked')
   if (company.style.display === 'none' || company.style.display === '') {
+    yesCompany.classList.toggle('active');
     company.style.display = 'flex';
   } else {
     company.style.display = 'none';
+    yesCompany.classList.remove('active');
   }
 })
 
 yesProject.addEventListener('click', () => {
   console.log('clicked')
   if (project.style.display === 'none' || project.style.display === '') {
+    yesProject.classList.toggle('active');
     project.style.display = 'flex';
   } else {
     project.style.display = 'none';
+    yesProject.classList.remove('active');
   }
 })
 
