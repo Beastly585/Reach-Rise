@@ -6,7 +6,7 @@ html {
   margin: 0;
   background-color: black;
 
-  width: 100vw;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -406,6 +406,12 @@ textarea {
   border: solid 1px rgba(255, 104, 104, 0.4);
   border-radius: 2px;
   margin-top: 10px;
+}
+
+@media (max-width: 430px) {
+  .option-choose {
+    font-size: 0.8em;
+  }
 }
 
 .option-choose i{
