@@ -13,7 +13,7 @@ html {
 html, body {
   width: 100%;
   overflow-x: hidden;
-  
+
 }
 
 html * {
@@ -148,7 +148,7 @@ body.menuOpen .content-wrapper {
 
 
 .hamburger-container .special-link {
-  color: black;
+  color: white;
   background-color: #ff5100;
   padding: 2px 10px;
   font-weight: 800;
@@ -196,8 +196,78 @@ body.menuOpen .content-wrapper {
   font-weight: 800;
 }
 
-.intro-subtitle {
+
+.intro-text {
+  font-size: 1.5em;
+  opacity: 0.85;
+}
+
+.intro-next-text {
   font-size: 1.6em;
+}
+
+.intro-subtitle {
+  display: inline-block;
+  width: fit-content;
+  opacity: 0.85;
+}
+
+
+
+.post-intro .intro-test {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+
+
+.your-what-cont {
+  overflow-y: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.4em;
+  line-height: 38px;
+}
+
+.your-what {
+  max-height: 38px;
+  width: fit-content;
+  /* transform: translateY(-38px); */
+  animation: yourNew 9s infinite;
+  transition: ease-in-out 0.1s;
+  line-height: 38px;
+  display: flex;
+  align-items: start;
+}
+
+@keyframes yourNew { 
+  0% {
+    transform: translateY(0px);
+  } 
+  29% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-38px);
+  }
+  59% {
+    transform: translateY(-38px);
+  }
+  60% {
+    transform: translateY(-76px);
+  }
+  98% {
+    transform: translateY(-76px);
+  }
+  99% {
+    transform: translateY(76);
+  }
 }
 
 .intro-content .intro-phrase {
@@ -209,6 +279,10 @@ body.menuOpen .content-wrapper {
   font-style: none;
   color: white;
   transition: 0.3s ease-in-out;
+  font-weight: 600;
+  background-color: orangered;
+  padding: 10px 20px;
+  text-decoration: none;
 }
 
 .contact-link:visited {
@@ -227,23 +301,15 @@ body.menuOpen .content-wrapper {
 /* ---------post-intro section----------- */
 
 
-.post-intro-top {
-  font-size: 2em;
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto;
-  margin-top: 100px;
-  text-align: center;
-}
 
 .post-2 {
-  margin-top: 20px;
+  font-size: 1.4em;
 }
 
 .services-intro-container {
   width: 100vw; /* Full viewport width */
   height: 90px;
-  background-color: #F56F31; /* Orange */
+  background-color: orangered; /* Orange */
   overflow: hidden; /* Hide overflowing content */
   display: flex;
   align-items: center;
@@ -260,7 +326,8 @@ body.menuOpen .content-wrapper {
 .service-intro {
   flex: 0 0 auto;
   margin: 0 60px; /* Spacing between items */
-  color: black;
+  color: white;
+  text-shadow: 2px 2px 0 brown;
   font-size: 1.6em;
   font-weight: 800;
 }
@@ -292,7 +359,7 @@ body.menuOpen .content-wrapper {
 
 .post-intro .post-intro-p {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 
@@ -311,6 +378,9 @@ body.menuOpen .content-wrapper {
 
 .service-text-title {
   color: black;
+  width: 95%;
+  margin: 10px auto;
+  margin-top: 40px;
 }
 
 .service-link {
@@ -319,7 +389,13 @@ body.menuOpen .content-wrapper {
 
 .svc-number {
   font-size: 3em;
-  opacity: 0.4;
+  opacity: 0.35;
+}
+
+.svc-title .service-item {
+  font-size: 1.7em;
+  text-decoration: none;
+  font-weight: 800;
 }
 
 .service-item-container {
@@ -352,22 +428,100 @@ body.menuOpen .content-wrapper {
   opacity: 1;
 }
 
+
 .svc-number {
   font-size: 3.5em;
   font-weight: 800;
   opacity: 0.3;
   position: absolute;
-  top: -45px;
+  top: -38px;
   left: -20px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
 
   .svc-number {
     left: -10px;
+    margin-left: 10px;
   }
   
 }
+
+.expand-btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #F0FFFF;
+  color: rgb(28, 28, 28);
+  font-size: 1.5em;
+  font-weight: 400;
+  border: none;
+  padding: 10px;
+  transition: rotate 0.3s ease-in-out;
+  box-shadow: 0px 0.5px 2px gray;
+}
+
+/* .expand-btn::before, .expand-btn::after {
+  content:'';
+  width: 101%;
+  height: 101%;
+  position: absolute;
+  border-radius: 50%;
+  background-color: orangered;
+  z-index: -1;
+} */
+
+
+
+.rotated {
+  transform: rotate(45deg);
+}
+
+h4 {
+  display: inline-block;
+  color: white;
+  background-color: gray;
+  font-size: 1.3em;
+  padding: 5px;
+}
+
+.service-snippet {
+  width: 100%;
+  opacity: 0.7;
+}
+
+
+.svc-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-expand {
+  display: block; 
+  overflow: hidden;
+  max-height: 0; /* Initially hide it */
+  opacity: 0; /* Initially make it invisible */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
+
+  background-color: #333;
+  color: white;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.service-expand.moved {
+  min-height: fit-content; /* Adjust this based on your content size */
+  opacity: 1;  
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
+  padding: 10px;
+}
+
 
 .service-item-container h3 {
   font-size: 1.5em;
@@ -376,6 +530,14 @@ body.menuOpen .content-wrapper {
 .service-item-container ul {
   list-style-type: none;
   padding-left: 20px;
+}
+
+.service-item-container ul li {
+  margin-bottom: 5px;
+}
+
+.service-item-container ul li span {
+  text-decoration: none;
 }
 
 /* ------------WORKFLOW------------------ */
@@ -412,7 +574,7 @@ body.menuOpen .content-wrapper {
 .scrollbar-new {
   width: 80%;
   margin: 10px auto;
-  accent-color: rgb(251, 0, 255);
+  accent-color: orangered;
   background-color: white;
 }
 

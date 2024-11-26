@@ -84,7 +84,7 @@ yesCompany.addEventListener('click', () => {
     company.style.display = 'flex';
   } else {
     company.style.display = 'none';
-    yesCompany.classList.remove('active');
+    yesCompany.classList.remove('active'); 
   }
 })
 

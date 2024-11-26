@@ -27,10 +27,19 @@ hamburger.addEventListener('click', () => {
   }
 });
 
+const expandButtons = document.querySelectorAll('.expand-btn');
 
-
-
-
+expandButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Find the sibling .service-expand
+    const serviceExpand = button.closest('.service-item-container').querySelector('.service-expand');
+    const plusSign = button.querySelector('.plus-sign'); // Target the span with the + sign
+    
+    // Toggle the 'moved' class to trigger the transition
+    serviceExpand.classList.toggle('moved');
+    button.classList.toggle('rotated'); // Rotate the + sign
+  });
+});
 
 // Need to check Node.js installed - node -v
 // Get to correct folder - npm init -y
@@ -93,33 +102,33 @@ particlesJS('particles-js', {
 
 //Service Section Behavior 
 
-const serviceTitles = document.querySelectorAll('.service-item-container');
-const serviceDescs = document.querySelectorAll('.service-description');
+// const serviceTitles = document.querySelectorAll('.service-item-container');
+// const serviceDescs = document.querySelectorAll('.service-description');
 
-serviceTitles.forEach((title, index) => {
-  let itemOpen = false;
+// serviceTitles.forEach((title, index) => {
+//   let itemOpen = false;
 
-  title.addEventListener('click', () => {
-    const desc = serviceDescs[index]; // Get the corresponding description
-    const expandIcon = title.querySelector('.expand'); // Select the + sign
+//   title.addEventListener('click', () => {
+//     const desc = serviceDescs[index]; // Get the corresponding description
+//     const expandIcon = title.querySelector('.expand'); // Select the + sign
 
-    if (!itemOpen) {
-      desc.classList.add('service-description-visible');
-      title.classList.add('service-title-open');
-      expandIcon.style.transform = 'rotate(45deg)'; // Rotate the + sign
-      itemOpen = true;
-    } else {
-      title.classList.remove('service-title-open');
-      expandIcon.style.transform = 'rotate(0deg)'; // Reset rotation
+//     if (!itemOpen) {
+//       desc.classList.add('service-description-visible');
+//       title.classList.add('service-title-open');
+//       expandIcon.style.transform = 'rotate(45deg)'; // Rotate the + sign
+//       itemOpen = true;
+//     } else {
+//       title.classList.remove('service-title-open');
+//       expandIcon.style.transform = 'rotate(0deg)'; // Reset rotation
 
-      // Smooth transition for collapse
-      setTimeout(() => {
-        desc.classList.remove('service-description-visible');
-      }, 10 ); // Match the CSS transition duration
-      itemOpen = false;
-    }
-  });
-});
+//       // Smooth transition for collapse
+//       setTimeout(() => {
+//         desc.classList.remove('service-description-visible');
+//       }, 10 ); // Match the CSS transition duration
+//       itemOpen = false;
+//     }
+//   });
+// });
 
 
 // Add mouseenter and mouseleave event listeners to each slide
