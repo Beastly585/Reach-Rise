@@ -23,6 +23,21 @@ hamburger.addEventListener('click', () => {
 });
 
 
+const expandButtons = document.querySelectorAll('.expand-btn');
+
+expandButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Find the sibling .service-expand
+    const serviceExpand = button.closest('.margin-40').querySelector('.content-container');
+    const plusSign = button.querySelector('.plus-sign'); // Target the span with the + sign
+    button.classList.toggle('shifted');
+    // Toggle the 'moved' class to trigger the transition
+    serviceExpand.classList.toggle('opened');
+    plusSign.classList.toggle('rotated'); // Rotate the + sign
+  });
+});
+
+
 
 // Should be good to go
 particlesJS('particles-js', {
@@ -31,7 +46,7 @@ particlesJS('particles-js', {
     color: { value: ['#ff007f', '#ff4500'] }, // Fuchsia and OrangeRed
     shape: { type: 'circle' },
     opacity: {
-      value: 0.7,
+      value: 1,
       random: false,
       anim: { enable: false }
     },
@@ -44,7 +59,7 @@ particlesJS('particles-js', {
       enable: true,
       distance: 150,
       color: '#ff007f', // Fuchsia for lines
-      opacity: 0.5,
+      opacity: 1,
       width: 1
     },
     move: {
@@ -71,7 +86,5 @@ particlesJS('particles-js', {
   },
   retina_detect: true
 });
-
-
 
 

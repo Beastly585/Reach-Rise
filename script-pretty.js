@@ -131,126 +131,198 @@ particlesJS('particles-js', {
 // });
 
 
-// Add mouseenter and mouseleave event listeners to each slide
-const slides1 = document.querySelectorAll('.pricing-info-slide');
+// // Add mouseenter and mouseleave event listeners to each slide
+// const slides1 = document.querySelectorAll('.pricing-info-slide');
 
-slides1.forEach(slide => {
-  slide.addEventListener('mouseenter', () => {
-    // Add the 'active' class on hover
-    slide.classList.add('active');
-  });
+// slides1.forEach(slide => {
+//   slide.addEventListener('mouseenter', () => {
+//     // Add the 'active' class on hover
+//     slide.classList.add('active');
+//   });
 
-});
+// });
+const slideSelect = document.querySelectorAll('.control-cont button'); // Select all buttons
+const sliderAlign = document.querySelector('.slider'); // Select the slider
+const totalSlides = 5; // Total number of items in the carousel
+const degreesPerSlide = 360 / totalSlides; // Angle to rotate per slide
+let currentRotation = 0; // Track current rotation
 
-const navContainer = document.querySelector('.nav-container');
-const navItems = document.querySelectorAll('.nav-container nav');
-const sections = document.querySelectorAll('.section-var');
+// Function to get the current rotationY of the slider
+function getRotationY(element) {
+  const computedStyle = window.getComputedStyle(element);
+  const matrix = computedStyle.transform;
 
-const hiwSlides = document.querySelectorAll('.hiw-slide');
-const scrollbar = document.querySelector('.scrollbar-new');
-const currentSlide = document.querySelector('.current-slide');
-const hiwContainer = document.querySelector('.hiw-container');
+  if (matrix === 'none') return 0;
 
-// Function to update the visible slide and current slide text
-function updateSlide(index) {
-  // Ensure the index is within bounds
-  const validIndex = Math.max(0, Math.min(index, hiwSlides.length - 1));
+  // Extract rotationY from the transform matrix
+  const values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+  const a = parseFloat(values[0]);
+  const b = parseFloat(values[2]);
 
-  // Scroll to the selected slide
-  hiwSlides[validIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  let angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
 
-  // Update the current slide text
-  const slideTitle = hiwSlides[validIndex].querySelector('.hiw-title').textContent;
-  currentSlide.textContent = `Step ${validIndex + 1}: ${slideTitle}`;
+  // Convert negative angles to positive equivalent (0–360)
+  if (angle < 0) angle += 360;
 
-  // Sync the scrollbar with the visible slide
-  scrollbar.value = validIndex + 1; // +1 because the range input is 1-based
+  return angle;
 }
 
-// Add an event listener for the scrollbar
-scrollbar.addEventListener('input', (event) => {
-  const selectedIndex = parseInt(event.target.value, 10) - 1; // Convert from 1-based to 0-based
-  updateSlide(selectedIndex);
-});
+// Function to update the button highlight based on rotationY
+function updateButtonHighlight() {
+  const rotationY = getRotationY(sliderAlign);
 
-// Add an event listener for scrolling in the container
-hiwContainer.addEventListener('scroll', () => {
-  // Calculate which slide is mostly in view
-  const containerScrollLeft = hiwContainer.scrollLeft;
-  const containerWidth = hiwContainer.clientWidth;
+  // Reset all button colors
+  slideSelect.forEach(button => (button.style.backgroundColor = ''));
 
-  let visibleIndex = 0;
-  let maxVisibility = 0;
-
-  hiwSlides.forEach((slide, index) => {
-    const slideLeft = slide.offsetLeft;
-    const slideRight = slideLeft + slide.offsetWidth;
-
-    // Calculate how much of the slide is in view
-    const visibleWidth = Math.min(slideRight, containerScrollLeft + containerWidth) - Math.max(slideLeft, containerScrollLeft);
-    if (visibleWidth > maxVisibility) {
-      maxVisibility = visibleWidth;
-      visibleIndex = index;
-    }
-  });
-
-  // Update the current slide text and scrollbar
-  const visibleSlideTitle = hiwSlides[visibleIndex].querySelector('.hiw-title').textContent;
-  currentSlide.textContent = `Step ${visibleIndex + 1}: ${visibleSlideTitle}`;
-  scrollbar.value = visibleIndex + 1; // Sync scrollbar
-});
-
-// Initialize to the first slide
-updateSlide(0);
-
-
-const reviewSlides = document.querySelectorAll('.review-slide');
-const reviewContainer = document.querySelector('.reviews-container');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-const reviewSlider = document.querySelector('.review-slider');
-
-let currentIndex = 0;
-
-// Function to switch to the current slide
-function switchReviews(index) {
-  // Make sure the index is within the bounds of the reviewSlides array
-  if (index < 0) {
-    currentIndex = reviewSlides.length - 1;  // Loop to the last slide
-  } else if (index >= reviewSlides.length) {
-    currentIndex = 0;  // Loop to the first slide
-  } else {
-    currentIndex = index;
+  // Highlight the corresponding button based on ranges
+  if (rotationY > 340 || rotationY <= 52) {
+    slideSelect[0].style.backgroundColor = 'orangered'; // Button 1
+  } else if (rotationY > 52 && rotationY <= 124) {
+    slideSelect[1].style.backgroundColor = 'orangered'; // Button 2
+  } else if (rotationY > 124 && rotationY <= 196) {
+    slideSelect[2].style.backgroundColor = 'orangered'; // Button 3
+  } else if (rotationY > 196 && rotationY <= 268) {
+    slideSelect[3].style.backgroundColor = 'orangered'; // Button 4
+  } else if (rotationY > 268 && rotationY <= 340) {
+    slideSelect[4].style.backgroundColor = 'orangered'; // Button 5
   }
-
-  // Hide all slides
-  reviewSlides.forEach((slide, i) => {
-    slide.style.display = 'none';
-  });
-
-  // Show the current slide
-  reviewSlides[currentIndex].style.display = 'flex';
-
-  // Update the slider's value to match the current index
-  reviewSlider.value = currentIndex;
 }
 
-// Event listeners for the arrows
-leftArrow.addEventListener('click', () => {
-  switchReviews(currentIndex - 1); // Show the previous slide
+// Button Navigation
+slideSelect.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    // Stop the ongoing animation when a button is clicked
+    sliderAlign.style.animation = 'none';
+    // Calculate the rotation for the selected slide
+    const targetRotation = -index * degreesPerSlide;
+
+    // Apply the rotation
+    sliderAlign.style.transition = 'transform 0.5s ease-in-out';
+    sliderAlign.style.transform = `perspective(3000px) rotateY(${targetRotation}deg)`;
+
+    // Update rotation and button highlight
+    currentRotation = targetRotation;
+    updateButtonHighlight();
+  });
 });
 
-rightArrow.addEventListener('click', () => {
-  switchReviews(currentIndex + 1); // Show the next slide
+// Scroll Navigation (For Mouse and Touchpad)
+window.addEventListener('wheel', (e) => {
+  if (e.deltaX !== 0) {
+    // Stop the animation when scrolling is detected
+    sliderAlign.style.animation = 'none';
+
+    const scrollDelta = e.deltaX; // Get horizontal scroll amount from wheel event
+    const viewportWidth = window.innerWidth; // Width of the viewport
+
+    // Normalize the scroll difference to a rotation angle
+    const scrollToDegrees = (scrollDelta / viewportWidth) * degreesPerSlide;
+
+    // Update the rotation
+    currentRotation += scrollToDegrees;
+    sliderAlign.style.transition = 'transform 0.1s ease'; // Optional: make the scroll transition smooth
+    sliderAlign.style.transform = `perspective(3000px) rotateY(${currentRotation}deg)`;
+
+    // Update the button highlight
+    updateButtonHighlight();
+  }
 });
 
-// Event listener for the slider
-reviewSlider.addEventListener('input', () => {
-  switchReviews(parseInt(reviewSlider.value)); // Update slide when slider moves
+// Touch Navigation (For Mobile Devices)
+let touchStartX = 0; // Track the starting X position of the touch
+
+window.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX; // Get the initial touch position
 });
 
-// Initialize the carousel by showing the first slide
-switchReviews(currentIndex);
+window.addEventListener('touchmove', (e) => {
+  const touchMoveX = e.touches[0].clientX; // Get the current touch position
+  const touchDeltaX = touchStartX - touchMoveX; // Calculate how much the touch moved horizontally
+
+  if (Math.abs(touchDeltaX) > 0) {
+    // Stop the animation when scrolling is detected
+    sliderAlign.style.animation = 'none';
+
+    // Normalize the touch difference to a rotation angle
+    const scrollToDegrees = (touchDeltaX / window.innerWidth) * degreesPerSlide;
+
+    // Update the rotation
+    currentRotation += scrollToDegrees;
+    sliderAlign.style.transition = 'transform 0.1s ease'; // Optional: make the scroll transition smooth
+    sliderAlign.style.transform = `perspective(3000px) rotateY(${currentRotation}deg)`;
+
+    // Update the button highlight
+    updateButtonHighlight();
+
+    // Update the touchStartX for the next move event
+    touchStartX = touchMoveX;
+  }
+});
+
+// Initial setup to highlight the starting slide
+updateButtonHighlight();
+
+
+// const navContainer = document.querySelector('.nav-container');
+// const navItems = document.querySelectorAll('.nav-container nav');
+// const sections = document.querySelectorAll('.section-var');
+
+// const hiwSlides = document.querySelectorAll('.hiw-slide');
+// const scrollbar = document.querySelector('.scrollbar-new');
+// const currentSlide = document.querySelector('.current-slide');
+// const hiwContainer = document.querySelector('.hiw-container');
+
+// // Function to update the visible slide and current slide text
+// function updateSlide(index) {
+//   // Ensure the index is within bounds
+//   const validIndex = Math.max(0, Math.min(index, hiwSlides.length - 1));
+
+//   // Scroll to the selected slide
+//   hiwSlides[validIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+
+//   // Update the current slide text
+//   const slideTitle = hiwSlides[validIndex].querySelector('.hiw-title').textContent;
+//   currentSlide.textContent = `Step ${validIndex + 1}: ${slideTitle}`;
+
+//   // Sync the scrollbar with the visible slide
+//   scrollbar.value = validIndex + 1; // +1 because the range input is 1-based
+// }
+
+// // Add an event listener for the scrollbar
+// scrollbar.addEventListener('input', (event) => {
+//   const selectedIndex = parseInt(event.target.value, 10) - 1; // Convert from 1-based to 0-based
+//   updateSlide(selectedIndex);
+// });
+
+// // Add an event listener for scrolling in the container
+// hiwContainer.addEventListener('scroll', () => {
+//   // Calculate which slide is mostly in view
+//   const containerScrollLeft = hiwContainer.scrollLeft;
+//   const containerWidth = hiwContainer.clientWidth;
+
+//   let visibleIndex = 0;
+//   let maxVisibility = 0;
+
+//   hiwSlides.forEach((slide, index) => {
+//     const slideLeft = slide.offsetLeft;
+//     const slideRight = slideLeft + slide.offsetWidth;
+
+//     // Calculate how much of the slide is in view
+//     const visibleWidth = Math.min(slideRight, containerScrollLeft + containerWidth) - Math.max(slideLeft, containerScrollLeft);
+//     if (visibleWidth > maxVisibility) {
+//       maxVisibility = visibleWidth;
+//       visibleIndex = index;
+//     }
+//   });
+
+//   // Update the current slide text and scrollbar
+//   const visibleSlideTitle = hiwSlides[visibleIndex].querySelector('.hiw-title').textContent;
+//   currentSlide.textContent = `Step ${visibleIndex + 1}: ${visibleSlideTitle}`;
+//   scrollbar.value = visibleIndex + 1; // Sync scrollbar
+// });
+
+// // Initialize to the first slide
+// updateSlide(0);
 
 
 

@@ -70,6 +70,57 @@ particlesJS('particles-js', {
 
 
 
+const reviewSlides = document.querySelectorAll('.review-slide');
+const reviewContainer = document.querySelector('.reviews-container');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const reviewSlider = document.querySelector('.review-slider');
+
+let currentIndex = 0;
+
+// Function to switch to the current slide
+function switchReviews(index) {
+  // Make sure the index is within the bounds of the reviewSlides array
+  if (index < 0) {
+    currentIndex = reviewSlides.length - 1;  // Loop to the last slide
+  } else if (index >= reviewSlides.length) {
+    currentIndex = 0;  // Loop to the first slide
+  } else {
+    currentIndex = index;
+  }
+
+  // Hide all slides
+  reviewSlides.forEach((slide, i) => {
+    slide.style.display = 'none';
+  });
+
+  // Show the current slide
+  reviewSlides[currentIndex].style.display = 'flex';
+
+  // Update the slider's value to match the current index
+  reviewSlider.value = currentIndex;
+}
+
+// Event listeners for the arrows
+leftArrow.addEventListener('click', () => {
+  switchReviews(currentIndex - 1); // Show the previous slide
+});
+
+rightArrow.addEventListener('click', () => {
+  switchReviews(currentIndex + 1); // Show the next slide
+});
+
+// Event listener for the slider
+reviewSlider.addEventListener('input', () => {
+  switchReviews(parseInt(reviewSlider.value)); // Update slide when slider moves
+});
+
+// Initialize the carousel by showing the first slide
+switchReviews(currentIndex);
+
+
+
+
 const yesCompany = document.querySelector('#company-expand');
 const yesProject = document.querySelector('#project-expand');
 const project = document.querySelector('.project-info-container');
