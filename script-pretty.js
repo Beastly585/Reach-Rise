@@ -175,15 +175,15 @@ function updateButtonHighlight() {
   slideSelect.forEach(button => (button.style.backgroundColor = ''));
 
   // Highlight the corresponding button based on ranges
-  if (rotationY > 340 || rotationY <= 52) {
+  if (rotationY > 350 || rotationY <= 62) {
     slideSelect[0].style.backgroundColor = 'orangered'; // Button 1
-  } else if (rotationY > 52 && rotationY <= 124) {
+  } else if (rotationY > 62 && rotationY <= 134) {
     slideSelect[1].style.backgroundColor = 'orangered'; // Button 2
-  } else if (rotationY > 124 && rotationY <= 196) {
+  } else if (rotationY > 134 && rotationY <= 206) {
     slideSelect[2].style.backgroundColor = 'orangered'; // Button 3
-  } else if (rotationY > 196 && rotationY <= 268) {
+  } else if (rotationY > 206 && rotationY <= 278) {
     slideSelect[3].style.backgroundColor = 'orangered'; // Button 4
-  } else if (rotationY > 268 && rotationY <= 340) {
+  } else if (rotationY > 278 && rotationY <= 350) {
     slideSelect[4].style.backgroundColor = 'orangered'; // Button 5
   }
 }
@@ -200,10 +200,14 @@ slideSelect.forEach((button, index) => {
     sliderAlign.style.transition = 'transform 0.5s ease-in-out';
     sliderAlign.style.transform = `perspective(3000px) rotateY(${targetRotation}deg)`;
 
-    // Update rotation and button highlight
+    // Update rotation (this ensures other interactions, like scroll/touch, stay in sync)
     currentRotation = targetRotation;
-    updateButtonHighlight();
   });
+});
+
+// Listen for the end of the rotation transition to update the button highlight
+sliderAlign.addEventListener('transitionend', () => {
+  updateButtonHighlight();
 });
 
 // Scroll Navigation (For Mouse and Touchpad)
@@ -261,6 +265,7 @@ window.addEventListener('touchmove', (e) => {
 
 // Initial setup to highlight the starting slide
 updateButtonHighlight();
+
 
 
 // const navContainer = document.querySelector('.nav-container');
