@@ -30,7 +30,7 @@
 <div class="content-wrapper">
 </div>
 
-<body>
+<body class="test">
 
   <section>
     <div class="contact-intro-container">
@@ -43,9 +43,176 @@
       <!-- <div class="contact-intro-desc">What do you envision for your business? What goals are you striving for?</div>
       <div class="contact-intro-desc">Whether you have a specific project in mind or just know you're ready for a change, I'm here for you.</div> -->
       <div class="contact-intro-desc">Fill in the form! We'll reach out in no time.</div>
-      <div class="review-svc-container">
+      <div class="review-svc-container slideRight">
         <div class="review-svc-text">
-          If you haven't yet, check out <a href="./services.html">MY SERVICES<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          If you haven't yet, check out <a href="./services.html">OUR SERVICES<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <section>
+        <div class="review-svc-container-mobile">
+          <div class="review-svc-text">
+           <a href="./services.html">Check out our services <i class="fa-solid fa-arrow-up-right-from-square"> </i></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="contact-area-laptop">
+
+        <div class="contact-container">
+          <h2 class="form-title" style="color: black">CONTACT</h2>
+            <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="121c383f-0684-48e6-b6a8-46a88bc74195">
+  
+              <div class="general-info-container contact-subsection">
+                <!-- <h3 class="contact-subtitle">GENERAL</h3> -->
+                <label for="name">your name<span class="orange">*</span></label>
+                <input type="text" name="name" class="quote-item name" id="name" placeholder="Your name" required>
+      
+                <label for="email">your email<span class="orange">*</span></label>
+                <input type="text" name="email" class="quote-item name" id="email" placeholder="Your email" required>
+                
+                <label for="general-text">Please state your interest<span class="orange">*</span></label>
+                <textarea name="general-inquiry" id="general-text" class="general-inquiry quote-area" placeholder="Please state your inquiry here" required></textarea>
+  
+              </div>
+  
+              <div class="optional-info-macro">
+  
+                  <div class="optional-container contact-subsection">
+                    
+                    <button class="option-choose" id="company-expand" type="button">Want to add company information? (optional)<i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="company-info-container hidden-info-container" id="company-info">
+                      <!-- <h3 class="contact-subtitle">COMPANY</h3> -->
+                    
+                      <label for="company-name" style = "margin-top: 20px">company name<span class="orange">*</span></label>
+                      <input type="text" name="company-name" class="quote-item business" id="company-name" placeholder="Company Name"
+                        required>
+                    
+                      <label for="company-phone">company phone</label>
+                      <input type="text" name="company-phone" class="quote-item phone" id="company-phone" placeholder="Company Phone">
+                    
+                      <label for="business-address">company address</label>
+                
+                        <input type="text" name="business-address" class="quote-item address" id="business-address" placeholder="Address">
+                        <input type="text" name="business-city" class="quote-item address city" id="business-city" placeholder="City">
+                        <input type="text" name="business-zip" class="quote-item address zip" id="business-zip" placeholder="ZIP / Postal">
+                        <input type="text" name="business-state" class="quote-item address state" id="business-state" placeholder="State/Region">
+              
+                    
+                        <label for="company-description">briefly describe your company<span class="orange">*</span></label>
+                        <input type="text" name="company-description" class="company-description quote-item" id="company-description"
+                        placeholder="Company Description" required>
+                    
+                    
+                      <label for="company-services">top 3 services do you offer<span class="orange">*</span></label>
+                      <input type="text" name="company-services" class="quote-item company-services" id="company-services"
+                        placeholder="List the Main Services your Company Offers" required>
+                    
+                      <label for="current-website">current website URL (if you have one)</label>
+                      <input type="website" name="website" class="quote-item website" id="current-website"
+                        placeholder="Current Website URL">
+                    
+                    </div>
+                  </div>
+  
+                  <div class="optional-container contact-subsection">
+                  
+                    <button class="option-choose" id="project-expand" type="button">Want to add project specifics? (optional)<i
+                        class="fa-solid fa-chevron-down"></i></button>
+                    <div class="project-info-container hidden-info-container" id="project-info">
+                      <!-- <h3 class="contact-subtitle">COMPANY</h3> -->
+                  
+                      <label for="service-select" style="margin-top: 20px">What kind of service?<span class="orange">*</span></label>
+                      <select id="service-select" name="service"
+                        style="font-size: 0.9em; font-weight: 600; opacity: 0.7; width: 100%;padding: 3px; box-sizing: border-box;">
+                        <option value="optional">--Choose a service--</option>
+                        <option value="new">New Website</option>
+                        <option value="upgrade">Upgrade Current Website</option>
+                        <option value="tweak">Tweaks</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="brand">Branding - Logos, Flyers, Social Media, etc.</option>
+                        <option value="other">Other</option>
+                      </select>
+                  
+                  
+                  
+                      <div class="input-group" id="new">
+                        <label for="new-site-name">What's the purpose of this website?<span class="orange">*</span></label>
+                        <input type="text" name="new-website-name" id="new-site-name" placeholder="Describe why you want a new website"
+                          required>
+                  
+                        <label for="special-features">Will your site needs specific features?</label>
+                        <input type="text" name="special-features" id="special-features"
+                          placeholder="i.e. - Booking Calendar, Online Marketplace">
+                  
+                        <label for="template">Do you have a template you like?</label>
+                        <input type="text" name="template" id="template" placeholder="URL to template you'd like to emulate">
+                  
+                        <label for="url-pref">What URL do you want your new site to have?</label>
+                        <input type="text" name="url-pref" id="url-pref" placeholder="Desired URL">
+                      </div>
+                  
+                      <div class="input-group" id="upgrade">
+                        <label for="desired-upgrades">What changes do you want made to your current site?</label>
+                        <textarea type="text" name="desired-upgrades" id="desired-upgrades"
+                          placeholder="Describe the changes you want made to your current site"></textarea>
+                  
+                        <label for="template">Do you have a template you like?</label>
+                        <input type="text" name="template" id="template" placeholder="URL to template you'd like to emulate">
+                      </div>
+                  
+                      <div class="input-group" id="tweak">
+                        <div class="tweak-notice" style="opacity: 0.7; color: black; margin-bottom: 20px; text-align: center;">NOTE: this option is for <strong>very minor changes</strong></div>
+                        <label for="tweak-what">what will I be tweaking?</label>
+                        <input name="tweak-what" id="tweak-what" placeholder="Website? Logos?">
+                  
+                        <label for="tweak-details">desired tweaks</label>
+                        <textarea name="tweak-details" id="tweak-details" placeholder="What Changes do you Need Made?"></textarea>
+                      </div>
+                  
+                      <div class="input-group" id="brand">
+                  
+                        <label for="select-brandkit">What media type?</label>
+                        <select name="select-brandkit" id="select-brandkit" size="5" class="brandkit-multiple" style="margin-top: 2px;">
+                          <option value="logo">Brandkit - Logo package</option>
+                          <option value="profile-image">Social Media - Profile Picture, Banners</option>
+                          <option value="campaign">New Campaign - Flyers, Billboards, etc.</option>
+                        </select>
+                  
+                        <label for="select-brand-details">Additional details:</label>
+                        <textarea name="select-brand-detail" id="select-brand-details"
+                          placeholder="Do you have a vision already? Any details you'd like to share? (i.e. favorite colors, other logos you like)"></textarea>
+                      </div>
+                  
+                  
+                      <div class="input-group" id="other">
+                  
+                        <label for="other-details">Your request type isn't listed?</label>
+                        <textarea name="other-details" id="other-details"
+                          placeholder="Please provide as much info about your inquiry as possible here."></textarea>
+                      </div>
+                    </div>
+                  
+                  
+                  
+                  </div>
+    
+              </div>
+  
+              <div class="budget contact-subsection">
+                <label for="budget" class="budget-title">What's your budget?<span class="orange">*</span><span class="adjust-note" style="font-size: 0.8em; opacity: 0.6;">(use the slider to adjust)</span>
+                </label>
+                <div id="budget-value">$1000</div>
+                <input type="range" id="budget" class="budget-slide" name="budget" min="490" max="5010" step="10" value="1000">
+                <div id="budget-description" class="budget-description">A great starting point for small, essential projects.</div>
+              </div>
+              
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              <button class="submit-button" type="submit">SUBMIT</button>
+            </form>
+  
+  
         </div>
       </div>
 
@@ -54,14 +221,8 @@
     
   </section>
 
-  <section>
-    <div class="review-svc-container-mobile">
-      <div class="review-svc-text">
-        REVIEW <a href="./services.html">OUR SERVICES</a>.
-      </div>
-    </div>
-  </section>
-
+ 
+<!-- 
   <section>
     
     <div class="contact-area">
@@ -72,7 +233,7 @@
             <input type="hidden" name="access_key" value="121c383f-0684-48e6-b6a8-46a88bc74195">
 
             <div class="general-info-container contact-subsection">
-              <!-- <h3 class="contact-subtitle">GENERAL</h3> -->
+  
               <label for="name">your name<span class="orange">*</span></label>
               <input type="text" name="name" class="quote-item name" id="name" placeholder="Your name" required>
     
@@ -90,7 +251,7 @@
                   
                   <button class="option-choose" id="company-expand" type="button">Want to add company information? (optional)<i class="fa-solid fa-chevron-down"></i></button>
                   <div class="company-info-container hidden-info-container" id="company-info">
-                    <!-- <h3 class="contact-subtitle">COMPANY</h3> -->
+              
                   
                     <label for="company-name" style = "margin-top: 20px">company name<span class="orange">*</span></label>
                     <input type="text" name="company-name" class="quote-item business" id="company-name" placeholder="Company Name"
@@ -128,7 +289,7 @@
                   <button class="option-choose" id="project-expand" type="button">Want to add project specifics? (optional)<i
                       class="fa-solid fa-chevron-down"></i></button>
                   <div class="project-info-container hidden-info-container" id="project-info">
-                    <!-- <h3 class="contact-subtitle">COMPANY</h3> -->
+                
                 
                     <label for="service-select" style="margin-top: 20px">What kind of service?<span class="orange">*</span></label>
                     <select id="service-select" name="service"
@@ -223,7 +384,7 @@
       </div>
     </div>
   </section>
-  
+   -->
 
 
 <!-- 
@@ -750,7 +911,7 @@
   </div> -->
 
 
-  <section>
+  <!-- <section>
     <div class="testimonials-container slideDown">
       <h2 class="testimonials-title h2title">Testimonials</h2>
       <div class="testimonials-intro" style="font-size: 1.2em;">What previous customers say about our work:</div>
@@ -821,7 +982,7 @@
         <button class="right-arrow">&gt;</button>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
 </body>

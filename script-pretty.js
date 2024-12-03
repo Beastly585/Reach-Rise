@@ -141,7 +141,7 @@ particlesJS('particles-js', {
 //   });
 
 // });
-const slideSelect = document.querySelectorAll('.control-cont button'); // Select all buttons
+const slideSelect = document.querySelectorAll('.control-cont .slide1'); // Select all buttons
 const sliderAlign = document.querySelector('.slider'); // Select the slider
 const totalSlides = 5; // Total number of items in the carousel
 const degreesPerSlide = 360 / totalSlides; // Angle to rotate per slide
@@ -171,22 +171,31 @@ function getRotationY(element) {
 function updateButtonHighlight() {
   const rotationY = getRotationY(sliderAlign);
 
-  // Reset all button colors
-  slideSelect.forEach(button => (button.style.backgroundColor = ''));
+   // Reset all button styles
+   slideSelect.forEach(button => {
+    button.style.backgroundColor = ''; // Reset background
+    button.style.color = 'orangered';  // Reset text color
+  });
 
   // Highlight the corresponding button based on ranges
   if (rotationY > 350 || rotationY <= 62) {
-    slideSelect[0].style.backgroundColor = 'orangered'; // Button 1
+    slideSelect[0].style.backgroundColor = 'orangered'; // Highlight background
+    slideSelect[0].style.color = 'white';              // Highlight text color
   } else if (rotationY > 62 && rotationY <= 134) {
-    slideSelect[1].style.backgroundColor = 'orangered'; // Button 2
+    slideSelect[1].style.backgroundColor = 'orangered';
+    slideSelect[1].style.color = 'white';
   } else if (rotationY > 134 && rotationY <= 206) {
-    slideSelect[2].style.backgroundColor = 'orangered'; // Button 3
+    slideSelect[2].style.backgroundColor = 'orangered';
+    slideSelect[2].style.color = 'white';
   } else if (rotationY > 206 && rotationY <= 278) {
-    slideSelect[3].style.backgroundColor = 'orangered'; // Button 4
+    slideSelect[3].style.backgroundColor = 'orangered';
+    slideSelect[3].style.color = 'white';
   } else if (rotationY > 278 && rotationY <= 350) {
-    slideSelect[4].style.backgroundColor = 'orangered'; // Button 5
+    slideSelect[4].style.backgroundColor = 'orangered';
+    slideSelect[4].style.color = 'white';
   }
 }
+
 
 // Button Navigation
 slideSelect.forEach((button, index) => {

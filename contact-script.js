@@ -1,4 +1,4 @@
-const blur = document.querySelector(".content-wrapper");
+const blur = document.querySelector('.test');
 const hamburger = document.querySelector('.hamburger-icon');
 const menuContainer = document.querySelector('.hamburger-container');
 
@@ -40,7 +40,7 @@ particlesJS('particles-js', {
       enable: true,
       distance: 150,
       color: '#ff007f', // Fuchsia for lines
-      opacity: 0.5,
+      opacity: 0.75,
       width: 1
     },
     move: {
@@ -61,8 +61,8 @@ particlesJS('particles-js', {
       resize: true
     },
     modes: {
-      repulse: { distance: 100, duration: 0.7 },
-      push: { particles_nb: 8 }
+      repulse: { distance: 100, duration: 0.9 },
+      push: { particles_nb: 10 }
     }
   },
   retina_detect: true
@@ -101,22 +101,22 @@ function switchReviews(index) {
   reviewSlider.value = currentIndex;
 }
 
-// Event listeners for the arrows
-leftArrow.addEventListener('click', () => {
-  switchReviews(currentIndex - 1); // Show the previous slide
-});
+// // Event listeners for the arrows
+// leftArrow.addEventListener('click', () => {
+//   switchReviews(currentIndex - 1); // Show the previous slide
+// });
 
-rightArrow.addEventListener('click', () => {
-  switchReviews(currentIndex + 1); // Show the next slide
-});
+// rightArrow.addEventListener('click', () => {
+//   switchReviews(currentIndex + 1); // Show the next slide
+// });
 
-// Event listener for the slider
-reviewSlider.addEventListener('input', () => {
-  switchReviews(parseInt(reviewSlider.value)); // Update slide when slider moves
-});
+// // Event listener for the slider
+// reviewSlider.addEventListener('input', () => {
+//   switchReviews(parseInt(reviewSlider.value)); // Update slide when slider moves
+// });
 
-// Initialize the carousel by showing the first slide
-switchReviews(currentIndex);
+// // Initialize the carousel by showing the first slide
+// switchReviews(currentIndex);
 
 
 
@@ -167,32 +167,32 @@ slider.oninput = function () {
   }
 
   // Update the color based on the slider's value (neutral scale)
-  const percentage = (value - 500) / (5000 - 500); // Scale to 0-1
-  const color1 = "white"; // Starting color
-  const color2 = "orangered"; // Midpoint color
-  const color3 = "fuchsia"; // End color
+  // const percentage = (value - 500) / (5000 - 500); // Scale to 0-1
+  // const color1 = "white"; // Starting color
+  // const color2 = "orangered"; // Midpoint color
+  // const color3 = "fuchsia"; // End color
 
-  const mixColor = (start, end, ratio) =>
-    Math.round(start + (end - start) * ratio);
+  // const mixColor = (start, end, ratio) =>
+  //   Math.round(start + (end - start) * ratio);
 
-  // Convert percentage to RGB blending
-  const r = mixColor(
-    mixColor(255, 255, Math.min(percentage * 2, 1)),
-    255,
-    Math.max(percentage - 0.5, 0) * 2
-  );
-  const g = mixColor(
-    mixColor(255, 69, Math.min(percentage * 2, 1)),
-    0,
-    Math.max(percentage - 0.5, 0) * 2
-  );
-  const b = mixColor(
-    mixColor(255, 0, Math.min(percentage * 2, 1)),
-    255,
-    Math.max(percentage - 0.5, 0) * 2
-  );
+  // // Convert percentage to RGB blending
+  // const r = mixColor(
+  //   mixColor(255, 255, Math.min(percentage * 2, 1)),
+  //   255,
+  //   Math.max(percentage - 0.5, 0) * 2
+  // );
+  // const g = mixColor(
+  //   mixColor(255, 69, Math.min(percentage * 2, 1)),
+  //   0,
+  //   Math.max(percentage - 0.5, 0) * 2
+  // );
+  // const b = mixColor(
+  //   mixColor(255, 0, Math.min(percentage * 2, 1)),
+  //   255,
+  //   Math.max(percentage - 0.5, 0) * 2
+  // );
 
-  this.style.background = `rgb(${r}, ${g}, ${b})`;
+  // this.style.background = `rgb(${r}, ${g}, ${b})`;
 
   // Update the budget description
   if (value < 1000) {
@@ -214,37 +214,37 @@ slider.oninput = function () {
 
 
 
-const serviceSelectItems = document.querySelectorAll('.ss');
-const exitButton = document.querySelector('.ss-exit');
-const hiwContainers = document.querySelectorAll('.hiw-container');
+// const serviceSelectItems = document.querySelectorAll('.ss');
+// const exitButton = document.querySelector('.ss-exit');
+// const hiwContainers = document.querySelectorAll('.hiw-container');
 
-serviceSelectItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    // Remove .ss-clicked from all items, hide all .hiw-container elements, and hide exit button
-    serviceSelectItems.forEach((el) => el.classList.remove('ss-clicked'));
-    hiwContainers.forEach((container) => container.style.display = 'none');
-    document.querySelectorAll('.avg-timeline').forEach((avgTime) => avgTime.style.display = 'none');
-    exitButton.classList.add('ss-exit-active'); // Show the exit button
+// serviceSelectItems.forEach((item) => {
+//   item.addEventListener('click', () => {
+//     // Remove .ss-clicked from all items, hide all .hiw-container elements, and hide exit button
+//     serviceSelectItems.forEach((el) => el.classList.remove('ss-clicked'));
+//     hiwContainers.forEach((container) => container.style.display = 'none');
+//     document.querySelectorAll('.avg-timeline').forEach((avgTime) => avgTime.style.display = 'none');
+//     exitButton.classList.add('ss-exit-active'); // Show the exit button
 
-    // Add .ss-clicked to the clicked item
-    item.classList.add('ss-clicked');
+//     // Add .ss-clicked to the clicked item
+//     item.classList.add('ss-clicked');
 
-    // Display the relevant .hiw-container based on the clicked .ss type
-    if (item.classList.contains('ss-new')) {
-      document.querySelector('.avg-new').style.display = 'block';
-      document.querySelector('.hiw-container-new').style.display = 'flex';
-    } else if (item.classList.contains('ss-upgrade')) {
-      document.querySelector('.avg-upgrade').style.display = 'block';
-      document.querySelector('.hiw-container-upgrade').style.display = 'flex';
-    } else if (item.classList.contains('ss-tweaks')) {
-      document.querySelector('.avg-tweak').style.display = 'block';
-      document.querySelector('.hiw-container-tweaks').style.display = 'flex';
-    } else if (item.classList.contains('ss-consultation')) {
-      document.querySelector('.avg-consult').style.display = 'block';
-      document.querySelector('.hiw-container-consult').style.display = 'flex';
-    }
-  });
-});
+//     // Display the relevant .hiw-container based on the clicked .ss type
+//     if (item.classList.contains('ss-new')) {
+//       document.querySelector('.avg-new').style.display = 'block';
+//       document.querySelector('.hiw-container-new').style.display = 'flex';
+//     } else if (item.classList.contains('ss-upgrade')) {
+//       document.querySelector('.avg-upgrade').style.display = 'block';
+//       document.querySelector('.hiw-container-upgrade').style.display = 'flex';
+//     } else if (item.classList.contains('ss-tweaks')) {
+//       document.querySelector('.avg-tweak').style.display = 'block';
+//       document.querySelector('.hiw-container-tweaks').style.display = 'flex';
+//     } else if (item.classList.contains('ss-consultation')) {
+//       document.querySelector('.avg-consult').style.display = 'block';
+//       document.querySelector('.hiw-container-consult').style.display = 'flex';
+//     }
+//   });
+// });
 
 
 // // Add click event to exit button to hide the expanded view
