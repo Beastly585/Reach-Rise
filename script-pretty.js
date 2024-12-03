@@ -3,8 +3,7 @@ window.onload = () => {
     window.scrollTo(0, 0);
   }
 };
-
-const blur = document.querySelector(".content-wrapper");
+const blur = document.querySelector('.content-wrapper');
 const hamburger = document.querySelector('.hamburger-icon');
 const menuContainer = document.querySelector('.hamburger-container');
 
@@ -13,20 +12,25 @@ let menuOpen = false;
 
 hamburger.addEventListener('click', () => {
   if (!menuOpen) {
+    // Open the menu
     hamburger.classList.add('clicked');
     menuContainer.classList.add('hamburger-container-active');
-    blur.classList.add('menuOpen');
+    blur.classList.add('visible');
     menuOpen = true;
+
+    // Add click listener to blur to close the menu
+    blur.addEventListener('click', closeMenu);
   } else {
-    hamburger.classList.remove('clicked');
-    blur.classList.remove('menuOpen');
-    
-    // Smoothly close the menu
-    menuContainer.classList.remove('hamburger-container-active');
-    menuOpen = false;
+    closeMenu();
   }
 });
 
+function closeMenu() {
+  hamburger.classList.remove('clicked');
+  menuContainer.classList.remove('hamburger-container-active');
+  blur.classList.remove('visible');
+  menuOpen = false;
+}
 const expandButtons = document.querySelectorAll('.expand-btn');
 
 expandButtons.forEach((button) => {
