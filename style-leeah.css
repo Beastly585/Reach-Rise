@@ -557,7 +557,7 @@ body.menuOpen .content-wrapper {
 
 
 .rotated {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 h4 {

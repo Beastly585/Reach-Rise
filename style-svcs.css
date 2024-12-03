@@ -99,6 +99,7 @@ a:hover {
   left: 50%;
 }
 
+
 /* Menu Container */
 .hamburger-container {
   transform: translateX(100%);
@@ -181,9 +182,7 @@ body.menuOpen .content-wrapper {
 
 
 
-.one-content-container {
-  margin-top: 0;
-}
+
 
 .intro-section {
   position: relative;
@@ -245,7 +244,7 @@ body.menuOpen .content-wrapper {
 
   height: fit-content;
   box-sizing: border-box;
-  padding-top: 120px;
+  padding-top: 100px;
 
   /* border-bottom: solid 2px orangered; */
 }
@@ -263,7 +262,7 @@ body.menuOpen .content-wrapper {
   position: absolute;
   top: 15%;
   right: 20%;
-  font-size: 8em;
+  font-size: 7em;
   font-family: "Bowbly One", "Host Grotesk", "Poppins";
   font-weight: 900;
 }
@@ -285,6 +284,17 @@ body.menuOpen .content-wrapper {
   background: linear-gradient(to left, orangered, fuchsia);
   transform: scale(1.02);
 }
+
+.expand-btn .plus-sign {
+  font-size: 1.2em;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.plus-sign.rotated {
+  transform: rotate(45deg);
+}
+
 
 .content-container {
   display: none;

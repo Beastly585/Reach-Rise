@@ -35,7 +35,6 @@ expandButtons.forEach((button) => {
     // Find the sibling .service-expand
     const serviceExpand = button.closest('.margin-40').querySelector('.content-container');
     const plusSign = button.querySelector('.plus-sign'); // Target the span with the + sign
-    button.classList.toggle('shifted');
     // Toggle the 'moved' class to trigger the transition
     serviceExpand.classList.toggle('opened');
     plusSign.classList.toggle('rotated'); // Rotate the + sign
