@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Styling for mobile first */
+
+
+
+
+/* Set-up large-screen media queries */
+
+@media (min-width: 760px) {
+  body {
+    max-width: 850px;
+  }
+}
