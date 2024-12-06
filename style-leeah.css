@@ -37,7 +37,7 @@ header {
 i {
   font-size: 0.4em;
   vertical-align: top;
-  margin-left: 10px;
+  margin-left: 3px;
   margin-top: 5px;
 }
 
@@ -541,7 +541,10 @@ body.menuOpen .content-wrapper {
   width: 100%;
   margin: 0;
   font-size: 0.5em;
+  translate: rotate 0.3s ease-in-out;
 }
+
+
 
 
 /* .expand-btn::before, .expand-btn::after {
@@ -558,6 +561,7 @@ body.menuOpen .content-wrapper {
 
 .rotated {
   transform: rotate(180deg);
+  transition: rotate ease-in-out 0.3s;
 }
 
 h4 {
@@ -586,7 +590,6 @@ h4 {
   transform: translateY(-100%);
   transition: translateY 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
 
-  box-shadow: inset 2px 2px 5px gray;
   color: black;
   font-weight: 500;
   box-sizing: border-box;
@@ -607,12 +610,13 @@ h4 {
 
 .service-item-container ul {
   list-style-type: none;
-  padding-left: 20px;
 }
 
 .service-item-container ul li {
+  padding: 5px;
   margin-bottom: 5px;
   position: relative;
+  background-image: linear-gradient(to right, rgba(173, 173, 173, 0.566), transparent);
 }
 
 .service-item-container ul li::after {
@@ -621,7 +625,6 @@ h4 {
   position: absolute;
   bottom: -2px;
   left: -2px;
-  background-image: linear-gradient(to right, black, transparent);
   height: 1px;
 }
 
@@ -666,6 +669,80 @@ h4 {
   accent-color: orangered;
   background-color: white;
 }
+
+
+@media (min-width: 780px) {
+
+  .service-item-container *:not(i) {
+    width: 100%;
+    text-align: center;
+  }
+
+  .svc-number {
+    font-size: 5em;
+    left: 50%;
+    transform: translate(-50%);
+    top: -80px;
+  }
+
+  .service-expand {
+    display: flex;
+    transform: translate(0);
+    font-size: 1.1em;
+  }
+
+  .expand-btn {
+    display: none;
+  }
+
+  .service-expand ul {
+    padding-left: 0px;
+    width: 100%;
+  }
+
+  .service-expand li {
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(188, 188, 188, 0.609);
+    text-align: center;
+  }
+
+  .service-expand li:after {
+    background-color: transparent;
+  }
+
+  .service-item-container::after {
+    background-color: transparent;
+  }
+
+  .service-item-container {
+    margin-bottom: 60px;
+  }
+
+  .service-snippet {
+    width: 100%;
+    opacity: 1;
+    margin-bottom: 10px;
+  }
+
+  .service-text-title {
+    margin-bottom: 50px;
+  }
+
+
+  .left-text-cont p {
+    margin-bottom: 15px;
+    text-align: right;
+    margin-right: 40px;
+  }
+
+  .right-text-cont p {
+    margin-bottom: 15px;
+    align-items: start;
+  }
+
+}
+
 
 
 /* 
